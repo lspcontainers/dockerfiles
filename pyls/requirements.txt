@@ -1,0 +1,4 @@
+python-lsp-server[all]==1.0.1
+pyls-mypy==0.1.8
+pyls-memestra==0.0.15
+pyls-isort==0.2.0
