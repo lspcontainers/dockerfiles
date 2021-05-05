@@ -20,6 +20,6 @@ FROM alpine:3.13.5
 
 WORKDIR /lua-language-server
 
-COPY --from="build" /build/lua-language-server .
+COPY --from=build /build/lua-language-server .
 
 CMD [ "./bin/Linux/lua-language-server", "-E", "main.lua" ]
