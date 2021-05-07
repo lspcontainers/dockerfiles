@@ -1,6 +1,5 @@
 version: "3.8"
 
-# docker-compose build --parallel
 services:
   node_base:
     image: lspcontainers/node_base:14
