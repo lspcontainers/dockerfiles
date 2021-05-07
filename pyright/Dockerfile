@@ -1,8 +1,6 @@
-FROM alpine:3.13.5 as build
+FROM node:14.16.1-alpine
 
 ENV VERSION="1.1.137"
-
-RUN apk add --no-cache nodejs npm
 
 RUN npm install -g pyright@${VERSION}
 
