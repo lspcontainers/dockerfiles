@@ -1,6 +1,6 @@
 version: "3.8"
 
-# docker-compose build
+# docker-compose build --parallel
 services:
   node_base:
     image: lspcontainers/node_base:14
@@ -16,3 +16,13 @@ services:
       dockerfile: Dockerfile
       args:
         VERSION: ${yamlls_ver}
+  typescript:
+    image: lspcontainers/typescript-language-server:${tsserver_ver}
+    depends_on:
+      - node_base
+    build:
+      context: typescript-language-server
+      dockerfile: Dockerfile
+      args:
+        VERSION: ${tsserver_ver}
+
