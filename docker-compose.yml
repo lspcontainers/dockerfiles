@@ -1,49 +1,32 @@
-version: "3.8"
-
 services:
-  node_base:
-    image: lspcontainers/node_base:14
-    build:
-      context: node_base
-      dockerfile: Dockerfile
-  yaml:
-    image: lspcontainers/yaml-language-server:${yamlls_ver}
-    depends_on:
-      - node_base
-    build:
-      context: yaml-language-server
-      dockerfile: Dockerfile
-      args:
-        VERSION: ${yamlls_ver}
-  typescript:
-    image: lspcontainers/typescript-language-server:${tsserver_ver}
-    depends_on:
-      - node_base
-    build:
-      context: typescript-language-server
-      dockerfile: Dockerfile
-      args:
-        VERSION: ${tsserver_ver}
-  docker:
-    image: lspcontainers/docker-language-server:${dockerls_ver}
-    depends_on:
-      - node_base
-    build:
-      context: docker-langserver
-      dockerfile: Dockerfile
-      args:
-        VERSION: ${dockerls_ver}
-  lua:
-    image: lspcontainers/lua-language-server:${luals_ver}
-    build:
-      context: lua-language-server
-      dockerfile: Dockerfile
-      args:
-        VERSION: ${luals_ver}
-  bash:
-    image: lspcontainers/bash-language-server:${bashls_ver}
+  bash-language-server:
+    image: lspcontainers/bash-language-server:build
     build:
       context: bash-language-server
       dockerfile: Dockerfile
-      args:
-        VERSION: ${bashls_ver}
+  docker-language-server:
+    image: lspcontainers/docker-language-server:build
+    build:
+      context: docker-langserver
+      dockerfile: Dockerfile
+  gopls:
+    image: lspcontainers/gopls:build
+    build:
+      context: gopls
+      dockerfile: Dockerfile
+  lua-language-server:
+    image: lspcontainers/lua-language-server:build
+    build:
+      context: lua-language-server
+      dockerfile: Dockerfile
+  typescript-language-server:
+    image: lspcontainers/typescript-language-server:build
+    build:
+      context: typescript-language-server
+      dockerfile: Dockerfile
+  yaml-language-server:
+    image: lspcontainers/yaml-language-server:build
+    build:
+      context: yaml-language-server
+      dockerfile: Dockerfile
+version: "3.8"
