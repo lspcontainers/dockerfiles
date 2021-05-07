@@ -19,6 +19,11 @@ services:
     build:
       context: lua-language-server
       dockerfile: Dockerfile
+  pyright:
+    image: lspcontainers/pyright:build
+    build:
+      context: pyright
+      dockerfile: Dockerfile
   typescript-language-server:
     image: lspcontainers/typescript-language-server:build
     build:
