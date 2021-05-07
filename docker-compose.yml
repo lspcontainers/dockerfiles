@@ -1,31 +1,31 @@
 services:
   bash-language-server:
-    image: lspcontainers/bash-language-server:1.17.0
+    image: lspcontainers/bash-language-server:build
     build:
       context: bash-language-server
       dockerfile: Dockerfile
   docker-language-server:
-    image: lspcontainers/docker-language-server:0.4.1
+    image: lspcontainers/docker-language-server:build
     build:
       context: docker-langserver
       dockerfile: Dockerfile
   gopls:
-    image: lspcontainers/gopls:0.6.11
+    image: lspcontainers/gopls:build
     build:
       context: gopls
       dockerfile: Dockerfile
   lua-language-server:
-    image: lspcontainers/lua-language-server:1.20.5
+    image: lspcontainers/lua-language-server:build
     build:
       context: lua-language-server
       dockerfile: Dockerfile
   typescript-language-server:
-    image: lspcontainers/typescript-language-server:0.5.1
+    image: lspcontainers/typescript-language-server:build
     build:
       context: typescript-language-server
       dockerfile: Dockerfile
   yaml-language-server:
-    image: lspcontainers/yaml-language-server:0.18.0
+    image: lspcontainers/yaml-language-server:build
     build:
       context: yaml-language-server
       dockerfile: Dockerfile
