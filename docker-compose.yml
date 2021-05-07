@@ -34,4 +34,10 @@ services:
       dockerfile: Dockerfile
       args:
         VERSION: ${dockerls_ver}
-
+  lua:
+    image: lspcontainers/lua-language-server:${luals_ver}
+    build:
+      context: lua-language-server
+      dockerfile: Dockerfile
+      args:
+        VERSION: ${luals_ver}

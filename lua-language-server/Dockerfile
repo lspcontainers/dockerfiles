@@ -1,6 +1,6 @@
 FROM alpine:3.13.5 as build
 
-ENV VERSION="1.20.5"
+ARG VERSION
 
 RUN apk add --no-cache bash g++ gcc git ninja
 
