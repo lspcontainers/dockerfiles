@@ -40,3 +40,10 @@ services:
       dockerfile: Dockerfile
       args:
         VERSION: ${luals_ver}
+  bash:
+    image: lspcontainers/bash-language-server:${bashls_ver}
+    build:
+      context: bash-language-server
+      dockerfile: Dockerfile
+      args:
+        VERSION: ${bashls_ver}
