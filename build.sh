@@ -8,6 +8,7 @@ export PYRIGHT="1.1.137"
 export RUST_ANALYZER="2021-05-03"
 export SUMNEKO_LUA="1.20.5"
 export TSSERVER="0.5.1"
+export TYPESCRIPT="4.2.4"
 export YAMLLS="0.18.0"
 
 docker buildx build \
@@ -47,6 +48,7 @@ docker buildx build \
 
 docker buildx build \
   --build-arg TSSERVER="${TSSERVER}" \
+  --build-arg TYPESCRIPT="${TYPESCRIPT}" \
   --tag "lspcontainers/typescript-language-server:${TSSERVER}" \
   --target tsserver \
   .
