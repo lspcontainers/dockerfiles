@@ -1,4 +1,4 @@
-# dockerfiles
+# lspcontainers/dockerfiles
 
 Dockerfiles for all LSPs used with `lspcontainers`.
 
