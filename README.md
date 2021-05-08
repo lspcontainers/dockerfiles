@@ -1,6 +1,6 @@
 # dockerfiles
 
-Dockerfiles for all LSPs used with lspcontainers.
+Dockerfiles for all LSPs used with `lspcontainers`.
 
 ## Installation
 
