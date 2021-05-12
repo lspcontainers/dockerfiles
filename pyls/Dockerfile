@@ -1,19 +1,16 @@
-FROM alpine:3.13.5 as build
+FROM python:3.9-alpine as build
 
-RUN apk add --no-cache build-base py3-pip python3-dev zeromq-dev
-
+RUN apk add --no-cache build-base zeromq-dev
 RUN python3 -m venv /venv
 WORKDIR /venv
-ADD requirements.txt /venv/
-RUN /venv/bin/pip install -r /venv/requirements.txt
+ARG VERSION="1.0.1"
+RUN /venv/bin/pip install python-lsp-server[all]==${VERSION}
 
 
-FROM alpine:3.13.5
+FROM python:3.9-alpine
 
-RUN apk add --no-cache python3 zeromq
-
+RUN apk add --no-cache zeromq
 WORKDIR /venv
 COPY --from=build /venv .
 ENV PATH="/venv/bin:$PATH"
-
-CMD [ "/venv/bin/pyls" ]
+CMD [ "/venv/bin/pylsp" ]
