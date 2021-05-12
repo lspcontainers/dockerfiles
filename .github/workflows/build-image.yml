@@ -5,8 +5,8 @@ on:
     branches: [ main ]
 
 jobs:
-  bashls:
-    name: Push bashls to Docker Hub
+  build_and_push:
+    name: Push ${{ matrix.context }} to Docker Hub
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
