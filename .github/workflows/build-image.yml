@@ -8,6 +8,33 @@ jobs:
   bashls:
     name: Push bashls to Docker Hub
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - context: servers/bashls
+            tags: lspcontainers/bash-language-server:1.17.0
+
+          - context: servers/dockerls
+            tags: lspcontainers/docker-language-server:0.4.1
+
+          - context: servers/gopls
+            tags: lspcontainers/gopls:0.6.11
+
+          - context: servers/pyright
+            tags: lspcontainers/pyright-langserver:1.1.137
+
+          - context: servers/rust_analyzer
+            tags: lspcontainers/rust-analyzer:2021-05-03
+
+          - context: servers/sumneko_lua
+            tags: lspcontainers/lua-language-server:1.20.5
+
+          - context: servers/tsserver
+            tags: lspcontainers/typescript-language-server:0.5.1
+
+          - context: servers/yamlls
+            tags: lspcontainers/yaml-language-server:0.18.0
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
@@ -24,5 +51,5 @@ jobs:
       - name: Build + Push to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          context: servers/bashls
-          tags: lspcontainers/bashls:1.17.0
+            context: ${{ matrix.context }}
+            tags: ${{ matrix.tags }}
