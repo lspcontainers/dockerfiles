@@ -28,6 +28,13 @@ services:
       dockerfile: .
       args:
         VERSION: ${pyright}
+  pyls:
+    image: lspcontainers/pyls:${pyls}
+    build:
+      context: servers/pyls
+      dockerfile: .
+      args:
+        VERSION: ${pyls}
   rust_analyzer:
     image: lspcontainers/rust-analyzer:${rust_analyzer}
     build:
