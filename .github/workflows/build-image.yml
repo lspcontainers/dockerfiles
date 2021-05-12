@@ -6,7 +6,7 @@ on:
 
 jobs:
   build_and_push:
-    name: Push ${{ matrix.context }} to Docker Hub
+    name: Build + Push ${{ matrix.context }} LSP
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -30,7 +30,7 @@ jobs:
 
           - context: rust_analyzer
             tag: rust-analyzer
-            version: 2021-05-03
+            version: "2021-05-03"
 
           - context: sumneko_lua
             tag: lua-language-server
@@ -62,4 +62,5 @@ jobs:
           build-args: |
             VERSION=${{ matrix.version }}
           context: servers/${{ matrix.context }}
+          push: true
           tags: lspcontainers/${{ matrix.tag }}:${{ matrix.version }}
