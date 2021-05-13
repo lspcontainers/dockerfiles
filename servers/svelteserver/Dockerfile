@@ -7,7 +7,7 @@ RUN apk add --no-cache \
 ARG VERSION
 
 RUN npm install -g \
-  svelte-language-server
+  svelte-language-server@${VERSION}
 
 CMD [ "/usr/bin/svelteserver", "--stdio" ]
 

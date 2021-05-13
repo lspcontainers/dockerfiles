@@ -42,6 +42,13 @@ services:
       dockerfile: .
       args:
         VERSION: ${sumneko_lua}
+  svelteserver:
+    image: lspcontainers/svelte-language-server:${svelteserver}
+    build:
+      context: servers/svelteserver
+      dockerfile: .
+      args:
+        VERSION: ${svelteserver}
   tsserver:
     image: lspcontainers/typescript-language-server:${tsserver}
     build:
