@@ -1,9 +1,6 @@
 FROM alpine:3.13.5 as builder
 
-COPY hashicorp.asc .
-
-RUN apk add --no-cache --virtual build-deps gnupg curl \
-  && gpg --import hashicorp.asc 
+RUN apk add --no-cache --virtual build-deps gnupg curl
 
 ARG VERSION
 
@@ -12,6 +9,8 @@ WORKDIR /home/terraformls
 RUN curl --proto '=https' --tlsv1.2 -fsSLO https://releases.hashicorp.com/terraform-ls/${VERSION}/terraform-ls_${VERSION}_linux_amd64.zip \
   --next -fsSLO https://releases.hashicorp.com/terraform-ls/${VERSION}/terraform-ls_${VERSION}_SHA256SUMS \
   --next -fsSLO https://releases.hashicorp.com/terraform-ls/${VERSION}/terraform-ls_${VERSION}_SHA256SUMS.sig \
+  --next -s -o hashicorp.asc https://keybase.io/hashicorp/pgp_keys.asc \
+  && gpg --import ./hashicorp.asc \
   && echo "$(grep terraform-ls_${VERSION}_linux_amd64.zip terraform-ls_${VERSION}_SHA256SUMS)" > SHA256SUMS \
   && gpg --verify terraform-ls_${VERSION}_SHA256SUMS.sig terraform-ls_${VERSION}_SHA256SUMS \
   && sha256sum -c SHA256SUMS \
