@@ -63,3 +63,10 @@ services:
       dockerfile: .
       args:
         VERSION: ${yamlls}
+  terraformls:
+    image: lspcontainers/terraform-language-server:${terraformls}
+    build:
+      context: servers/terraformls
+      dockerfile: .
+      args:
+        VERSION: ${terraformls}
