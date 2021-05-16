@@ -57,7 +57,7 @@ services:
       args:
         VERSION: ${svelteserver}
   terraformls:
-    image: lspcontainers/terraform-language-server:${terraformls}
+    image: lspcontainers/terraform-ls:${terraformls}
     build:
       context: servers/terraformls
       dockerfile: .
