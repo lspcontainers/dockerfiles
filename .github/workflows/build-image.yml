@@ -40,6 +40,10 @@ jobs:
             tag: svelte-language-server
             version: 0.13.7
 
+          - context: terraformls
+            tag: terraform-ls
+            version: 0.16.3
+
           - context: tsserver
             tag: typescript-language-server
             version: 0.5.1
