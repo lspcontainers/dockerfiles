@@ -24,13 +24,13 @@ jobs:
             tag: gopls
             version: 0.6.11
 
+          - context: pylsp
+            tag: python-lsp
+            version: 1.0.1
+
           - context: pyright
             tag: pyright-langserver
             version: 1.1.137
-
-          - context: pyls
-            tag: python-lsp
-            version: 1.0.1
 
           - context: rust_analyzer
             tag: rust-analyzer
