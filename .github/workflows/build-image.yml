@@ -36,6 +36,10 @@ jobs:
             tag: lua-language-server
             version: 1.21.1
 
+          - context: svelteserver
+            tag: svelte-language-server
+            version: 0.13.7
+
           - context: tsserver
             tag: typescript-language-server
             version: 0.5.1
