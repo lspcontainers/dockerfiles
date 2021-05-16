@@ -34,7 +34,7 @@ jobs:
 
           - context: sumneko_lua
             tag: lua-language-server
-            version: 1.20.5
+            version: 1.21.1
 
           - context: tsserver
             tag: typescript-language-server
