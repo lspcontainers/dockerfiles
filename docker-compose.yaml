@@ -1,79 +1,79 @@
 version: "3.8"
 services:
+
   bashls:
     image: lspcontainers/bash-language-server:${bashls}
     build:
       context: servers/bashls
-      dockerfile: .
       args:
         VERSION: ${bashls}
+
   dockerls:
     image: lspcontainers/docker-language-server:${dockerls}
     build:
       context: servers/dockerls
-      dockerfile: .
       args:
         VERSION: ${dockerls}
+
   gopls:
     image: lspcontainers/gopls:${gopls}
     build:
       context: servers/gopls
-      dockerfile: .
       args:
         VERSION: ${gopls}
+
   pylsp:
     image: lspcontainers/pylsp:${pylsp}
     build:
       context: servers/pylsp
-      dockerfile: .
       args:
         VERSION: ${pylsp}
+
   pyright:
     image: lspcontainers/pyright:${pyright}
     build:
       context: servers/pyright
-      dockerfile: .
       args:
         VERSION: ${pyright}
+
   rust_analyzer:
     image: lspcontainers/rust-analyzer:${rust_analyzer}
     build:
       context: servers/rust_analyzer
-      dockerfile: .
       args:
         VERSION: ${rust_analyzer}
+
   sumneko_lua:
     image: lspcontainers/lua-language-server:${sumneko_lua}
     build:
       context: servers/sumneko_lua
-      dockerfile: .
       args:
         VERSION: ${sumneko_lua}
+
   svelteserver:
     image: lspcontainers/svelte-language-server:${svelteserver}
     build:
       context: servers/svelteserver
-      dockerfile: .
       args:
         VERSION: ${svelteserver}
+
   terraformls:
     image: lspcontainers/terraform-ls:${terraformls}
     build:
       context: servers/terraformls
-      dockerfile: .
       args:
         VERSION: ${terraformls}
+
   tsserver:
     image: lspcontainers/typescript-language-server:${tsserver}
     build:
       context: servers/tsserver
-      dockerfile: .
       args:
         VERSION: ${tsserver}
+
   yamlls:
     image: lspcontainers/yaml-language-server:${yamlls}
     build:
       context: servers/yamlls
-      dockerfile: .
       args:
         VERSION: ${yamlls}
