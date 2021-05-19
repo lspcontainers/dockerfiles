@@ -23,14 +23,14 @@ services:
         VERSION: ${gopls}
 
   pylsp:
-    image: lspcontainers/pylsp:${pylsp}
+    image: lspcontainers/python-lsp:${pylsp}
     build:
       context: servers/pylsp
       args:
         VERSION: ${pylsp}
 
   pyright:
-    image: lspcontainers/pyright:${pyright}
+    image: lspcontainers/pyright-langserver:${pyright}
     build:
       context: servers/pyright
       args:
