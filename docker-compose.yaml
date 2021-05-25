@@ -77,3 +77,10 @@ services:
       dockerfile: .
       args:
         VERSION: ${yamlls}
+  jsonls:
+    image: lspcontainers/json-language-server:${jsonls}
+    build:
+      context: servers/jsonls
+      dockerfile: .
+      args:
+        VERSION: ${jsonls}
