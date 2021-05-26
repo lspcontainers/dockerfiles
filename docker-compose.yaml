@@ -77,3 +77,10 @@ services:
       dockerfile: .
       args:
         VERSION: ${yamlls}
+  vuels:
+    image: lspcontainers/vue-language-server:${vuels}
+    build:
+      context: servers/vuels
+      dockerfile: .
+      args:
+        VERSION: ${vuels}
