@@ -32,6 +32,10 @@ jobs:
             tag: pyright-langserver
             version: 1.1.137
 
+          - context: html
+            tag: html-language-server
+            version: 1.4.0
+
           - context: rust_analyzer
             tag: rust-analyzer
             version: "2021-05-03"

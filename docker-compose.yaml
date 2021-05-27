@@ -21,6 +21,13 @@ services:
       dockerfile: .
       args:
         VERSION: ${gopls}
+  html:
+    image: lspcontainers/html-language-server:${html}
+    build:
+      context: servers/html
+      dockerfile: .
+      args:
+        VERSION: ${html}
   pylsp:
     image: lspcontainers/pylsp:${pylsp}
     build:
