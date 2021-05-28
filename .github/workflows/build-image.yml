@@ -59,6 +59,10 @@ jobs:
           - context: yamlls
             tag: yaml-language-server
             version: 0.18.0
+
+          - context: vuels
+            tag: vue-language-server
+            version: 0.7.2
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
