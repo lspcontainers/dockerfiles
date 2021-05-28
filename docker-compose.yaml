@@ -21,6 +21,20 @@ services:
       dockerfile: .
       args:
         VERSION: ${gopls}
+  html:
+    image: lspcontainers/html-language-server:${html}
+    build:
+      context: servers/html
+      dockerfile: .
+      args:
+        VERSION: ${html}
+  jsonls:
+    image: lspcontainers/json-language-server:${jsonls}
+    build:
+      context: servers/jsonls
+      dockerfile: .
+      args:
+        VERSION: ${jsonls}
   pylsp:
     image: lspcontainers/pylsp:${pylsp}
     build:
@@ -77,10 +91,10 @@ services:
       dockerfile: .
       args:
         VERSION: ${yamlls}
-  jsonls:
-    image: lspcontainers/json-language-server:${jsonls}
+  vuels:
+    image: lspcontainers/vue-language-server:${vuels}
     build:
-      context: servers/jsonls
+      context: servers/vuels
       dockerfile: .
       args:
-        VERSION: ${jsonls}
+        VERSION: ${vuels}
