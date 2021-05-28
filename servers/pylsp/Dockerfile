@@ -9,6 +9,7 @@ RUN /venv/bin/pip install python-lsp-server[all]==${VERSION}
 
 FROM alpine:3.13.5
 
+RUN apk add --no-cache python3 py3-pip
 WORKDIR /venv
 COPY --from=build /venv .
 ENV PATH="/venv/bin:$PATH"
