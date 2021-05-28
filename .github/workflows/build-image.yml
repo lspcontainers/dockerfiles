@@ -20,6 +20,10 @@ jobs:
             tag: docker-language-server
             version: 0.4.1
 
+          - context: jsonls
+            tag: json-language-server
+            version: 1.3.4
+
           - context: gopls
             tag: gopls
             version: 0.6.11

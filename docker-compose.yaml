@@ -28,6 +28,13 @@ services:
       dockerfile: .
       args:
         VERSION: ${html}
+  jsonls:
+    image: lspcontainers/json-language-server:${jsonls}
+    build:
+      context: servers/jsonls
+      dockerfile: .
+      args:
+        VERSION: ${jsonls}
   pylsp:
     image: lspcontainers/pylsp:${pylsp}
     build:
