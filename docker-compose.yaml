@@ -2,96 +2,97 @@ version: "3.8"
 services:
 
   bashls:
-    image: lspcontainers/bash-language-server:${bashls}
+    image: lspcontainers/bash-language-server:${bashls}+r1
     build:
       context: servers/bashls
       args:
         VERSION: ${bashls}
 
   dockerls:
-    image: lspcontainers/docker-language-server:${dockerls}
+    image: lspcontainers/docker-language-server:${dockerls}+r1
     build:
       context: servers/dockerls
       args:
         VERSION: ${dockerls}
 
   gopls:
-    image: lspcontainers/gopls:${gopls}
+    image: lspcontainers/gopls:${gopls}+r1
     build:
       context: servers/gopls
       args:
         VERSION: ${gopls}
   html:
-    image: lspcontainers/html-language-server:${html}
+    image: lspcontainers/html-language-server:${html}+r1
     build:
       context: servers/html
       dockerfile: .
       args:
         VERSION: ${html}
   jsonls:
-    image: lspcontainers/json-language-server:${jsonls}
+    image: lspcontainers/json-language-server:${jsonls}+r1
     build:
       context: servers/jsonls
       dockerfile: .
       args:
         VERSION: ${jsonls}
   pylsp:
-    image: lspcontainers/python-lsp:${pylsp}
+    image: lspcontainers/python-lsp:${pylsp}+r1
     build:
       context: servers/pylsp
       args:
         VERSION: ${pylsp}
 
   pyright:
-    image: lspcontainers/pyright-langserver:${pyright}
+    image: lspcontainers/pyright-langserver:${pyright}+r1
     build:
       context: servers/pyright
       args:
         VERSION: ${pyright}
 
   rust_analyzer:
-    image: lspcontainers/rust-analyzer:${rust_analyzer}
+    image: lspcontainers/rust-analyzer:${rust_analyzer}+r1
     build:
       context: servers/rust_analyzer
       args:
         VERSION: ${rust_analyzer}
 
   sumneko_lua:
-    image: lspcontainers/lua-language-server:${sumneko_lua}
+    image: lspcontainers/lua-language-server:${sumneko_lua}+r1
     build:
       context: servers/sumneko_lua
       args:
         VERSION: ${sumneko_lua}
 
   svelteserver:
-    image: lspcontainers/svelte-language-server:${svelteserver}
+    image: lspcontainers/svelte-language-server:${svelteserver}+r1
     build:
       context: servers/svelteserver
       args:
         VERSION: ${svelteserver}
 
   terraformls:
-    image: lspcontainers/terraform-ls:${terraformls}
+    image: lspcontainers/terraform-ls:${terraformls}+r1
     build:
       context: servers/terraformls
       args:
         VERSION: ${terraformls}
 
   tsserver:
-    image: lspcontainers/typescript-language-server:${tsserver}
+    image: lspcontainers/typescript-language-server:${tsserver}+r1
     build:
       context: servers/tsserver
       args:
         VERSION: ${tsserver}
 
   yamlls:
-    image: lspcontainers/yaml-language-server:${yamlls}
+    image: lspcontainers/yaml-language-server:${yamlls}+r1
     build:
       context: servers/yamlls
       args:
         VERSION: ${yamlls}
+
   vuels:
-    image: lspcontainers/vue-language-server:${vuels}
+    image: lspcontainers/vue-language-server:${vuels}+r1
     build:
       context: servers/vuels
       dockerfile: .
