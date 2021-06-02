@@ -6,8 +6,10 @@ RUN apk add --no-cache \
 
 ARG VERSION
 
+ENV TSVERSION="4.3.2"
+
 RUN npm install -g \
   typescript-language-server@${VERSION} \
-  typescript
+  typescript@${TSVERSION}
 
 CMD [ "/usr/bin/typescript-language-server", "--stdio" ]
