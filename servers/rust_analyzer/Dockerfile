@@ -7,12 +7,15 @@ RUN apk add --no-cache \
 
 ARG VERSION
 
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain none -y \
-  && source $HOME/.cargo/env \
+RUN curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs -o /tmp/sh.rustup.rs \
+  && chmod +x /tmp/sh.rustup.rs \
+  && /tmp/sh.rustup.rs --default-toolchain none -y \
+  && rm -rf /tmp/sh.rustup.rs \
+  && . "$HOME"/.cargo/env \
   && rustup toolchain install nightly \
   && rustup component add rust-analyzer-preview
 
-COPY docker_entrypoint.sh /docker_entrypoint.sh
+COPY ./docker_entrypoint.sh /docker_entrypoint.sh
 
 ENTRYPOINT [ "/docker_entrypoint.sh" ]
 

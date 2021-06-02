@@ -15,8 +15,8 @@ RUN curl --proto '=https' --tlsv1.2 -fsSLO https://releases.hashicorp.com/terraf
   --next -fsSLO https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_SHA256SUMS.sig \
   --next -s -o hashicorp.asc https://keybase.io/hashicorp/pgp_keys.asc \
   && gpg --import ./hashicorp.asc \
-  && echo "$(grep terraform-ls_${VERSION}_linux_amd64.zip terraform-ls_${VERSION}_SHA256SUMS)" > SHA256SUMS \
-  && echo "$(grep terraform_${TERRAFORM_VERSION}_linux_amd64.zip terraform_${TERRAFORM_VERSION}_SHA256SUMS)" > TERRAFORM_SHA256SUMS \
+  && grep terraform-ls_${VERSION}_linux_amd64.zip terraform-ls_${VERSION}_SHA256SUMS > SHA256SUMS \
+  && grep terraform_${TERRAFORM_VERSION}_linux_amd64.zip terraform_${TERRAFORM_VERSION}_SHA256SUMS > TERRAFORM_SHA256SUMS \
   && gpg --verify terraform-ls_${VERSION}_SHA256SUMS.sig terraform-ls_${VERSION}_SHA256SUMS \
   && gpg --verify terraform_${TERRAFORM_VERSION}_SHA256SUMS.sig terraform_${TERRAFORM_VERSION}_SHA256SUMS \
   && sha256sum -c SHA256SUMS \
