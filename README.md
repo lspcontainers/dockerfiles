@@ -23,6 +23,5 @@ Every container has two tags available:
 
 - The `latest` tag, which points to the latest container build
 
-- A pinned version and release tag. The pinned version will be the latest
-  version of the language server, and we bump the release tag whenever
-  something around the container is updated.
+- A pinned version. The pinned version will be the latest
+  version of the language server.
