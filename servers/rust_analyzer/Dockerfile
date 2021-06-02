@@ -11,7 +11,7 @@ RUN curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs -o /tmp/sh.rustup.
   && chmod +x /tmp/sh.rustup.rs \
   && /tmp/sh.rustup.rs --default-toolchain none -y \
   && rm -rf /tmp/sh.rustup.rs \
-  && source "$HOME"/.cargo/env \
+  && . "$HOME"/.cargo/env \
   && rustup toolchain install nightly \
   && rustup component add rust-analyzer-preview
 
