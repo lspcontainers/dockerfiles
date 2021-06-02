@@ -3,6 +3,7 @@ name: Push LSP Docker Images
 on:
   pull_request:
   push:
+    branches: [ main ]
 
 jobs:
   build_and_push:
