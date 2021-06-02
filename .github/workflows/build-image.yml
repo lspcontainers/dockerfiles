@@ -101,4 +101,4 @@ jobs:
             VERSION=${{ matrix.version }}
           context: servers/${{ matrix.context }}
           push: ${{ github.ref == 'refs/heads/main' }}
-          tags: lspcontainers/${{ matrix.tag }}:${{ matrix.version }}
+          tags: lspcontainers/${{ matrix.tag }}:${{ matrix.version }},lspcontainers/${{ matrix.tag }}:latest
