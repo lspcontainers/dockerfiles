@@ -73,9 +73,16 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v2
 
+      # TODO: Replace w/ Github Action - https://github.com/lspcontainers/dockerfiles/runs/2724936969?check_suite_focus=true#step:4:7
       - name: Run hadolint
-        run: |
-          docker container run --entrypoint hadolint --rm -v $(pwd):/code -w /code hadolint/hadolint:2.4.1-alpine servers/${{ matrix.context }}/Dockerfile
+        run: >
+          docker container run
+          --entrypoint hadolint
+          --rm
+          --volume $(pwd):/code
+          --workdir /code
+          hadolint/hadolint:2.4.1-alpine
+          servers/${{ matrix.context }}/Dockerfile
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
