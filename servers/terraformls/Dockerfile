@@ -5,7 +5,7 @@ RUN apk add --no-cache --virtual build-deps gnupg curl
 WORKDIR /build
 
 ARG VERSION
-ARG TERRAFORM_VERSION=0.15.3
+ARG TERRAFORM_VERSION=1.0.0
 
 RUN curl --proto '=https' --tlsv1.2 -fsSLO https://releases.hashicorp.com/terraform-ls/${VERSION}/terraform-ls_${VERSION}_linux_amd64.zip \
   --next -fsSLO https://releases.hashicorp.com/terraform-ls/${VERSION}/terraform-ls_${VERSION}_SHA256SUMS \
