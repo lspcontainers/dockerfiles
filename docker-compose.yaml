@@ -36,7 +36,7 @@ services:
         VERSION: ${jsonls}
 
   pylsp:
-    image: lspcontainers/python-lsp:${pylsp}
+    image: lspcontainers/python-lsp-server:${pylsp}
     build:
       context: servers/pylsp
       args:

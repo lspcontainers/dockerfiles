@@ -9,7 +9,7 @@ RUN apk add --no-cache \
 
 WORKDIR /venv
 
-ARG VERSION="1.0.1"
+ARG VERSION
 
 RUN /venv/bin/pip install "python-lsp-server[all]==${VERSION}"
 
