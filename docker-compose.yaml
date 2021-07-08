@@ -97,3 +97,10 @@ services:
       context: servers/vuels
       args:
         VERSION: ${vuels}
+
+  intelephense:
+    image: lspcontainers/intelephense:${intelephense}
+    build:
+      context: servers/intelephense
+      args:
+        VERSION: ${intelephense}
