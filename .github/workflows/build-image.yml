@@ -69,6 +69,10 @@ jobs:
             tag: yaml-language-server
             version: 0.18.0
 
+          - context: intelephense
+            tag: intelephense
+            version: 1.7.1
+
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
