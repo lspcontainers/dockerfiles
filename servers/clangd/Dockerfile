@@ -1,0 +1,5 @@
+FROM alpine:3.14
+
+RUN apk add --no-cache clang-extra-tools
+
+CMD [ "/usr/bin/clangd", "--background-index" ]
