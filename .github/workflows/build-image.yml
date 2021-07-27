@@ -17,6 +17,10 @@ jobs:
             tag: bash-language-server
             version: 1.17.0
 
+          - context: clangd
+            tag: clangd-language-server
+            version: 11.1.0
+
           - context: dockerls
             tag: docker-language-server
             version: 0.4.1

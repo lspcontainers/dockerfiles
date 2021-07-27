@@ -7,6 +7,13 @@ services:
       args:
         VERSION: ${bashls}
 
+  clangd:
+    image: lspcontainers/clangd-language-server:${clangd}
+    build:
+      context: servers/clangd
+      args:
+        VERSION: ${clangd}
+
   dockerls:
     image: lspcontainers/docker-language-server:${dockerls}
     build:
