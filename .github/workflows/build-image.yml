@@ -33,6 +33,10 @@ jobs:
             tag: html-language-server
             version: 1.4.0
 
+          - context: jedi-language-server
+            tag: jedi-language-server
+            version: 0.34.1
+
           - context: jsonls
             tag: json-language-server
             version: 1.3.4
