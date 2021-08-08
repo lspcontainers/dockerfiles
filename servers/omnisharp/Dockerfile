@@ -8,8 +8,9 @@ RUN apk add --no-cache \
 ARG VERSION
 
 RUN cd $HOME
-RUN curl -L -O "https://github.com/OmniSharp/omnisharp-roslyn/releases/download/v${VERSION}/omnisharp-linux-x64.tar.gz" && \ 
-  tar -xvf omnisharp-linux-x64.tar.gz -C /usr/
+RUN curl -L -O "https://github.com/OmniSharp/omnisharp-roslyn/releases/download/v${VERSION}/omnisharp-linux-x64.tar.gz" \ 
+  && tar -xvf omnisharp-linux-x64.tar.gz -C /usr/ \
+  && rm omnisharp-linux-x64.tar.gz 
 
 FROM ls
 
