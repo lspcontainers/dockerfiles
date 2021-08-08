@@ -111,3 +111,10 @@ services:
       context: servers/intelephense
       args:
         VERSION: ${intelephense}
+
+  csharpls:
+    image: lspcontainers/csharpls:${intelephense}
+    build:
+      context: servers/csharpls
+      args:
+        VERSION: ${csharpls}
