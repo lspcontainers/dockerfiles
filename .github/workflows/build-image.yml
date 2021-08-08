@@ -77,6 +77,10 @@ jobs:
             tag: intelephense
             version: 1.7.1
 
+          - context: omnisharp
+            tag: omnisharp
+            version: 1.37.14
+
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
