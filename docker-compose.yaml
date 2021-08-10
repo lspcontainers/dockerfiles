@@ -112,7 +112,7 @@ services:
       args:
         VERSION: ${intelephense}
 
-  csharpls:
+  omnisharp:
     image: lspcontainers/csharp-language-server:${omnisharp}
     build:
       context: servers/omnisharp

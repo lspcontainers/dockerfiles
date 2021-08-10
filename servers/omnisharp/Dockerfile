@@ -1,22 +1,18 @@
-FROM alpine:3.13.5 AS ls
+FROM debian:stable-slim as build
 
-RUN apk update
-RUN apk add --no-cache \
-  bash \
-  curl
+WORKDIR /tmp
+
+RUN apt update \
+  && apt install curl -y
 
 ARG VERSION
 
-RUN cd $HOME
 RUN curl -L -O "https://github.com/OmniSharp/omnisharp-roslyn/releases/download/v${VERSION}/omnisharp-linux-x64.tar.gz" \ 
-  && tar -xvf omnisharp-linux-x64.tar.gz -C /usr/ \
+  && tar -xf omnisharp-linux-x64.tar.gz \
   && rm omnisharp-linux-x64.tar.gz 
 
-FROM ls
+FROM debian:stable-slim
 
-RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing && \
-    apk add --no-cache --virtual=.build-dependencies ca-certificates && \
-    cert-sync /etc/ssl/certs/ca-certificates.crt && \
-    apk del .build-dependencies
+COPY --from=build /tmp /usr
 
-CMD [ "/usr/run" ]
+CMD [ "/usr/run", "--stdio" ]
