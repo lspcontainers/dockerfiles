@@ -1,5 +1,7 @@
 FROM debian:stable-slim
 
+WORKDIR /tmp
+
 RUN apt update \
   && apt install curl -y \
   && rm -rf /var/lib/apt/lists
@@ -10,4 +12,4 @@ RUN curl -L -O "https://github.com/OmniSharp/omnisharp-roslyn/releases/download/
   && tar -xf omnisharp-linux-x64.tar.gz -C /usr \
   && rm omnisharp-linux-x64.tar.gz 
 
-CMD [ "/usr/run", "--stdio" ]
+CMD [ "/usr/run", "--languageserver" ]
