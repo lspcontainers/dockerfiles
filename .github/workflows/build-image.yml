@@ -59,7 +59,7 @@ jobs:
 
           - context: terraformls
             tag: terraform-ls
-            version: 0.20.1
+            version: 0.21.0
 
           - context: tsserver
             tag: typescript-language-server
