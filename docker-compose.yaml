@@ -42,6 +42,13 @@ services:
       args:
         VERSION: ${jsonls}
 
+  pwsh:
+    image: lspcontainers/pswh-language-server:${pwsh}
+    build:
+      context: servers/pwsh
+      args:
+        VERSION: ${pwsh}
+
   pylsp:
     image: lspcontainers/python-lsp-server:${pylsp}
     build:
