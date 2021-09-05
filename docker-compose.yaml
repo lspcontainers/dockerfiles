@@ -42,12 +42,12 @@ services:
       args:
         VERSION: ${jsonls}
 
-  pwsh:
-    image: lspcontainers/pswh-language-server:${pwsh}
+  powershell_es:
+    image: lspcontainers/pswh-language-server:${powershell_es}
     build:
-      context: servers/pwsh
+      context: servers/powershell_es
       args:
-        VERSION: ${pwsh}
+        VERSION: ${powershell_es}
 
   pylsp:
     image: lspcontainers/python-lsp-server:${pylsp}
