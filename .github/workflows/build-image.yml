@@ -49,6 +49,10 @@ jobs:
             tag: rust-analyzer
             version: "2021-05-03"
 
+          - context: solargraph
+            tag: solargraph
+            version: 0.43.0
+
           - context: sumneko_lua
             tag: lua-language-server
             version: 1.21.1
