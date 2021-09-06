@@ -2,7 +2,7 @@ FROM debian:bullseye-slim
 
 WORKDIR /tmp
 
-RUN apt update \
+RUN apt-get update \
   && apt install curl -y \
   && rm -rf /var/lib/apt/lists
 
