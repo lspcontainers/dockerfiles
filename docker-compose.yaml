@@ -111,3 +111,10 @@ services:
       context: servers/intelephense
       args:
         VERSION: ${intelephense}
+
+  omnisharp:
+    image: lspcontainers/csharp-language-server:${omnisharp}
+    build:
+      context: servers/omnisharp
+      args:
+        VERSION: ${omnisharp}
