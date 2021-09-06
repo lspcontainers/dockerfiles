@@ -3,7 +3,7 @@ FROM debian:bullseye-slim
 WORKDIR /tmp
 
 RUN apt-get update \
-  && apt install curl -y \
+  && apt-get install curl -y \
   && rm -rf /var/lib/apt/lists
 
 ARG VERSION
