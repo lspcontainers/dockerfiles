@@ -49,6 +49,10 @@ jobs:
             tag: rust-analyzer
             version: "2021-05-03"
 
+          - context: solargraph
+            tag: solargraph
+            version: 0.43.0
+
           - context: sumneko_lua
             tag: lua-language-server
             version: 1.21.1
@@ -59,7 +63,7 @@ jobs:
 
           - context: terraformls
             tag: terraform-ls
-            version: 0.19.1
+            version: 0.21.0
 
           - context: tsserver
             tag: typescript-language-server
@@ -76,6 +80,10 @@ jobs:
           - context: intelephense
             tag: intelephense
             version: 1.7.1
+
+          - context: omnisharp
+            tag: omnisharp
+            version: 1.37.14
 
     steps:
       - name: Check out the repo
