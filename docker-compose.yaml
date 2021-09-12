@@ -42,6 +42,13 @@ services:
       args:
         VERSION: ${jsonls}
 
+  powershell_es:
+    image: lspcontainers/powershell-language-server:${powershell_es}
+    build:
+      context: servers/powershell_es
+      args:
+        VERSION: ${powershell_es}
+
   pylsp:
     image: lspcontainers/python-lsp-server:${pylsp}
     build:
