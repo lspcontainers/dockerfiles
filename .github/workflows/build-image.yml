@@ -33,9 +33,17 @@ jobs:
             tag: html-language-server
             version: 1.4.0
 
+          - context: intelephense
+            tag: intelephense
+            version: 1.7.1
+
           - context: jsonls
             tag: json-language-server
             version: 1.3.4
+
+          - context: omnisharp
+            tag: omnisharp
+            version: 1.37.14
 
           - context: pylsp
             tag: python-lsp-server
@@ -76,14 +84,6 @@ jobs:
           - context: yamlls
             tag: yaml-language-server
             version: 0.18.0
-
-          - context: intelephense
-            tag: intelephense
-            version: 1.7.1
-
-          - context: omnisharp
-            tag: omnisharp
-            version: 1.37.14
 
     steps:
       - name: Check out the repo

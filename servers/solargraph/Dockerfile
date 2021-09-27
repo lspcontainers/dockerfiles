@@ -1,6 +1,13 @@
-FROM ruby:3.0.2-alpine3.13
+FROM alpine:3.13.5
 
-RUN apk add build-base
+RUN apk add --no-cache \
+  g++ \
+  gcc \
+  git \
+  make \
+  ruby \
+  ruby-dev \
+  zlib-dev
 
 ARG VERSION
 
