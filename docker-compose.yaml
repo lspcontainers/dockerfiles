@@ -35,12 +35,26 @@ services:
       args:
         VERSION: ${html}
 
+  intelephense:
+    image: lspcontainers/intelephense:${intelephense}
+    build:
+      context: servers/intelephense
+      args:
+        VERSION: ${intelephense}
+
   jsonls:
     image: lspcontainers/json-language-server:${jsonls}
     build:
       context: servers/jsonls
       args:
         VERSION: ${jsonls}
+
+  omnisharp:
+    image: lspcontainers/csharp-language-server:${omnisharp}
+    build:
+      context: servers/omnisharp
+      args:
+        VERSION: ${omnisharp}
 
   powershell_es:
     image: lspcontainers/powershell-language-server:${powershell_es}
@@ -111,17 +125,3 @@ services:
       context: servers/vuels
       args:
         VERSION: ${vuels}
-
-  intelephense:
-    image: lspcontainers/intelephense:${intelephense}
-    build:
-      context: servers/intelephense
-      args:
-        VERSION: ${intelephense}
-
-  omnisharp:
-    image: lspcontainers/csharp-language-server:${omnisharp}
-    build:
-      context: servers/omnisharp
-      args:
-        VERSION: ${omnisharp}
