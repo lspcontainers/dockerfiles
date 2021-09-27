@@ -53,6 +53,10 @@ jobs:
             tag: pyright-langserver
             version: 1.1.137
 
+          - context: powershell_es
+            tag: powershell-language-server
+            version: 2.5.1
+
           - context: rust_analyzer
             tag: rust-analyzer
             version: "2021-05-03"
