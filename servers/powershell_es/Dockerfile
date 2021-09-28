@@ -1,21 +1,15 @@
-FROM mcr.microsoft.com/powershell:latest
+FROM mcr.microsoft.com/powershell:alpine-3.11
 
-WORKDIR /PowerShellEditorServices
+WORKDIR /srv
 
-RUN apt-get update -qq \
-  && apt-get install \
+RUN apk add --no-cache \
   curl \
-  wget \
-  jq \
-  unzip -y
+  unzip
 
 ARG VERSION
 
-RUN curl -sL \
-  https://api.github.com/repos/PowerShell/PowerShellEditorServices/releases/latest \
-  | jq -r '.assets[].browser_download_url' \
-  | wget -qi - \
-  && unzip PowerShellEditorServices.zip -d ./ \
+RUN curl -L -o PowerShellEditorServices.zip https://github.com/PowerShell/PowerShellEditorServices/releases/download/v2.5.1/PowerShellEditorServices.zip \
+  && unzip PowerShellEditorServices.zip \
   && rm -fr PowerShellEditorServices.zip
 
-CMD ["/usr/bin/pwsh", "-NoLogo", "-NoProfile", "-Command", "/PowerShellEditorServices/PowerShellEditorServices/Start-EditorServices.ps1 -BundledModulesPath /PowerShellEditorServices -LogPath /PowerShellEditorServices/logs.log -SessionDetailsPath /PowerShellEditorServices/session.json -FeatureFlags @() -AdditionalModules @() -HostName 'lspcontainers' -HostProfileId 'lspcontainers' -HostVersion 1.0.0 -Stdio -LogLevel Diagnostic"]
+CMD ["/usr/bin/pwsh", "-NoLogo", "-NoProfile", "-Command", "/srv/PowerShellEditorServices/Start-EditorServices.ps1 -BundledModulesPath /PowerShellEditorServices -LogPath /PowerShellEditorServices/logs.log -SessionDetailsPath /PowerShellEditorServices/session.json -FeatureFlags @() -AdditionalModules @() -HostName 'lspcontainers' -HostProfileId 'lspcontainers' -HostVersion 1.0.0 -Stdio -LogLevel Diagnostic"]
