@@ -15,11 +15,8 @@ ARG VERSION
 RUN git clone --depth 1 --branch "${VERSION}" https://github.com/sumneko/lua-language-server \
   && cd lua-language-server \
   && git submodule update --init --recursive \
-  && cd 3rd/luamake \
-  && compile/install.sh \
-  && cd ../.. \
+  && ninja -C 3rd/luamake -f compile/ninja/linux.ninja \
   && ./3rd/luamake/luamake rebuild
-
 
 FROM alpine:3.13.5
 
@@ -27,4 +24,4 @@ WORKDIR /lua-language-server
 
 COPY --from=build /build/lua-language-server .
 
-CMD [ "./bin/Linux/lua-language-server", "-E", "main.lua" ]
+CMD [ "/lua-language-server/bin/Linux/lua-language-server", "-E", "main.lua" ]

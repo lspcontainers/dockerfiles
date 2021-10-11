@@ -67,7 +67,7 @@ jobs:
 
           - context: sumneko_lua
             tag: lua-language-server
-            version: 1.21.1
+            version: 2.4.2
 
           - context: svelteserver
             tag: svelte-language-server
