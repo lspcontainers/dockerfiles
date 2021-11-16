@@ -84,6 +84,13 @@ services:
       args:
         VERSION: ${rust_analyzer}
 
+  solargraph:
+    image: lspcontainers/solargraph:${solargraph}
+    build:
+      context: servers/solargraph
+      args:
+        VERSION: ${solargraph}
+
   sumneko_lua:
     image: lspcontainers/lua-language-server:${sumneko_lua}
     build:
