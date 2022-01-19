@@ -7,4 +7,4 @@ RUN apk add --no-cache \
     typescript-language-server \
     typescript
 
-CMD [ "/usr/bin/typescript-language-server", "--stdio" ]
+CMD [ "typescript-language-server", "--stdio" ]

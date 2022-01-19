@@ -6,4 +6,4 @@ RUN apk add --no-cache \
   && npm install -g \
     bash-language-server
 
-CMD [ "/usr/bin/bash-language-server", "start" ]
+CMD [ "bash-language-server", "start" ]

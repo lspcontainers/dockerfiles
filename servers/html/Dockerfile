@@ -6,4 +6,4 @@ RUN apk add --no-cache \
   && npm install -g \
     vscode-html-languageserver-bin
 
-CMD [ "/usr/bin/html-languageserver", "--stdio" ]
+CMD [ "html-languageserver", "--stdio" ]

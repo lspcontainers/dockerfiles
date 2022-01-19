@@ -6,4 +6,4 @@ RUN apk add --no-cache \
   && npm install -g \
     dockerfile-language-server-nodejs
 
-CMD [ "/usr/bin/docker-langserver", "--stdio" ]
+CMD [ "docker-langserver", "--stdio" ]

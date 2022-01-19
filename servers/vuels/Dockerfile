@@ -6,4 +6,4 @@ RUN apk add --no-cache \
   && npm install -g \
     vls
 
-CMD [ "/usr/bin/vls", "--stdio" ]
+CMD [ "vls", "--stdio" ]

@@ -6,4 +6,4 @@ RUN apk add --no-cache \
   && npm install -g \
     pyright
 
-CMD [ "/usr/bin/pyright-langserver", "--stdio" ]
+CMD [ "pyright-langserver", "--stdio" ]

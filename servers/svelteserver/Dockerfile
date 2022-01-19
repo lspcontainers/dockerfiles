@@ -6,4 +6,4 @@ RUN apk add --no-cache \
   && npm install -g \
     svelte-language-server
 
-CMD [ "/usr/bin/svelteserver", "--stdio" ]
+CMD [ "svelteserver", "--stdio" ]

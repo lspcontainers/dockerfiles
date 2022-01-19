@@ -6,4 +6,4 @@ RUN apk add --no-cache \
   && npm install -g \
     yaml-language-server
 
-CMD [ "/usr/bin/yaml-language-server", "--stdio" ]
+CMD [ "yaml-language-server", "--stdio" ]

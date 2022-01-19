@@ -6,4 +6,4 @@ RUN apk add --no-cache \
   && npm install -g \
     intelephense
 
-CMD [ "/usr/bin/intelephense", "--stdio" ]
+CMD [ "intelephense", "--stdio" ]
