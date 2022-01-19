@@ -1,4 +1,4 @@
-FROM alpine:3.13.5
+FROM alpine:3.15.0
 
 RUN apk add --no-cache \
   g++ \
@@ -7,10 +7,8 @@ RUN apk add --no-cache \
   make \
   ruby \
   ruby-dev \
-  zlib-dev
-
-ARG VERSION
-
-RUN gem install solargraph -v $VERSION
+  zlib-dev \
+  && gem install \
+    solargraph
 
 CMD [ "/usr/local/bundle/bin/solargraph", "stdio" ]

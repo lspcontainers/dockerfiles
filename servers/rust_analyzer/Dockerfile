@@ -1,11 +1,9 @@
-FROM alpine:3.13.5
+FROM alpine:3.15.0
 
 RUN apk add --no-cache \
   bash \
   curl \
   gcc
-
-ARG VERSION
 
 RUN curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs -o /tmp/sh.rustup.rs \
   && chmod +x /tmp/sh.rustup.rs \

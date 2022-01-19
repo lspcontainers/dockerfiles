@@ -1,14 +1,11 @@
-FROM mcr.microsoft.com/powershell:alpine-3.11
+FROM mcr.microsoft.com/powershell:alpine-3.14
 
 WORKDIR /srv
 
 RUN apk add --no-cache \
   curl \
-  unzip
-
-ARG VERSION
-
-RUN curl -L -o PowerShellEditorServices.zip https://github.com/PowerShell/PowerShellEditorServices/releases/download/v2.5.1/PowerShellEditorServices.zip \
+  unzip \
+  && curl -L -o PowerShellEditorServices.zip https://github.com/PowerShell/PowerShellEditorServices/releases/download/v2.5.1/PowerShellEditorServices.zip \
   && unzip PowerShellEditorServices.zip \
   && rm -fr PowerShellEditorServices.zip
 

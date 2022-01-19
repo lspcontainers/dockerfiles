@@ -1,12 +1,9 @@
-FROM alpine:3.13.5
+FROM alpine:3.15.0
 
 RUN apk add --no-cache \
   nodejs \
-  npm
-
-ARG VERSION
-
-RUN npm install -g \
-  pyright@${VERSION}
+  npm \
+  && npm install -g \
+    pyright
 
 CMD [ "/usr/bin/pyright-langserver", "--stdio" ]
