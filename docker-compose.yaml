@@ -1,91 +1,91 @@
 version: "3.8"
 services:
   bashls:
-    image: lspcontainers/bash-language-server:${bashls}
+    image: lspcontainers/bash-language-server
     build:
       context: servers/bashls
 
   clangd:
-    image: lspcontainers/clangd-language-server:${clangd}
+    image: lspcontainers/clangd-language-server
     build:
       context: servers/clangd
 
   dockerls:
-    image: lspcontainers/docker-language-server:${dockerls}
+    image: lspcontainers/docker-language-server
     build:
       context: servers/dockerls
 
   gopls:
-    image: lspcontainers/gopls:${gopls}
+    image: lspcontainers/gopls
     build:
       context: servers/gopls
 
   html:
-    image: lspcontainers/html-language-server:${html}
+    image: lspcontainers/html-language-server
     build:
       context: servers/html
 
   intelephense:
-    image: lspcontainers/intelephense:${intelephense}
+    image: lspcontainers/intelephense
     build:
       context: servers/intelephense
 
   jsonls:
-    image: lspcontainers/json-language-server:${jsonls}
+    image: lspcontainers/json-language-server
     build:
       context: servers/jsonls
 
   omnisharp:
-    image: lspcontainers/csharp-language-server:${omnisharp}
+    image: lspcontainers/csharp-language-server
     build:
       context: servers/omnisharp
 
   powershell_es:
-    image: lspcontainers/powershell-language-server:${powershell_es}
+    image: lspcontainers/powershell-language-server
     build:
       context: servers/powershell_es
 
   pylsp:
-    image: lspcontainers/python-lsp-server:${pylsp}
+    image: lspcontainers/python-lsp-server
     build:
       context: servers/pylsp
 
   pyright:
-    image: lspcontainers/pyright-langserver:${pyright}
+    image: lspcontainers/pyright-langserver
     build:
       context: servers/pyright
 
   rust_analyzer:
-    image: lspcontainers/rust-analyzer:${rust_analyzer}
+    image: lspcontainers/rust-analyzer
     build:
       context: servers/rust_analyzer
 
   sumneko_lua:
-    image: lspcontainers/lua-language-server:${sumneko_lua}
+    image: lspcontainers/lua-language-server
     build:
       context: servers/sumneko_lua
 
   svelteserver:
-    image: lspcontainers/svelte-language-server:${svelteserver}
+    image: lspcontainers/svelte-language-server
     build:
       context: servers/svelteserver
 
   terraformls:
-    image: lspcontainers/terraform-ls:${terraformls}
+    image: lspcontainers/terraform-ls
     build:
       context: servers/terraformls
 
   tsserver:
-    image: lspcontainers/typescript-language-server:${tsserver}
+    image: lspcontainers/typescript-language-server
     build:
       context: servers/tsserver
 
   yamlls:
-    image: lspcontainers/yaml-language-server:${yamlls}
+    image: lspcontainers/yaml-language-server
     build:
       context: servers/yamlls
 
   vuels:
-    image: lspcontainers/vue-language-server:${vuels}
+    image: lspcontainers/vue-language-server
     build:
       context: servers/vuels
