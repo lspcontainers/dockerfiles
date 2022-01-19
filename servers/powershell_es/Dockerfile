@@ -6,9 +6,8 @@ ARG LSP_VERSION "v2.5.1"
 
 RUN apk add --no-cache \
   curl \
-  unzip
-
-RUN curl -L -o PowerShellEditorServices.zip https://github.com/PowerShell/PowerShellEditorServices/releases/download/${LSP_VERSION}/PowerShellEditorServices.zip \
+  unzip \
+  && curl -L -o PowerShellEditorServices.zip https://github.com/PowerShell/PowerShellEditorServices/releases/download/${LSP_VERSION}/PowerShellEditorServices.zip \
   && unzip PowerShellEditorServices.zip \
   && rm -fr PowerShellEditorServices.zip
 

@@ -1,7 +1,5 @@
 FROM alpine:3.15.0 as build
 
-ARG LSP_VERSION "2.6.0"
-
 RUN apk add --no-cache \
   bash \
   g++ \
@@ -12,7 +10,7 @@ RUN apk add --no-cache \
 WORKDIR /build
 
 # hadolint ignore=DL3003
-RUN git clone --depth 1 --branch "${LSP_VERSION}" https://github.com/sumneko/lua-language-server \
+RUN git clone --depth 1 --branch master https://github.com/sumneko/lua-language-server \
   && cd lua-language-server \
   && git submodule update --init --recursive \
   && ninja -C 3rd/luamake -f compile/ninja/linux.ninja \

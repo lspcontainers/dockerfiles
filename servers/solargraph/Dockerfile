@@ -7,8 +7,8 @@ RUN apk add --no-cache \
   make \
   ruby \
   ruby-dev \
-  zlib-dev
-
-RUN gem install solargraph
+  zlib-dev \
+  && gem install \
+    solargraph
 
 CMD [ "/usr/local/bundle/bin/solargraph", "stdio" ]
