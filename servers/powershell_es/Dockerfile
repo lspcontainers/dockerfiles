@@ -2,12 +2,10 @@ FROM mcr.microsoft.com/powershell:alpine-3.14
 
 WORKDIR /srv
 
-ARG LSP_VERSION "v2.5.1"
-
 RUN apk add --no-cache \
   curl \
   unzip \
-  && curl -L -o PowerShellEditorServices.zip https://github.com/PowerShell/PowerShellEditorServices/releases/download/${LSP_VERSION}/PowerShellEditorServices.zip \
+  && curl -L -o PowerShellEditorServices.zip https://github.com/PowerShell/PowerShellEditorServices/releases/download/v2.5.1/PowerShellEditorServices.zip \
   && unzip PowerShellEditorServices.zip \
   && rm -fr PowerShellEditorServices.zip
 
