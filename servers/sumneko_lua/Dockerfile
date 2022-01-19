@@ -22,4 +22,4 @@ WORKDIR /lua-language-server
 
 COPY --from=build /build/lua-language-server .
 
-CMD [ "/lua-language-server/bin/Linux/lua-language-server", "-E", "main.lua" ]
+CMD [ "/lua-language-server/bin/lua-language-server", "-E", "/lua-language-server/bin/main.lua" ]
