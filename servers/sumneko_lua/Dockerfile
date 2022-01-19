@@ -10,7 +10,7 @@ RUN apk add --no-cache \
 WORKDIR /build
 
 # hadolint ignore=DL3003
-RUN git clone --depth 1 --branch master https://github.com/sumneko/lua-language-server \
+RUN git clone --depth 1 --branch "2.6.0" https://github.com/sumneko/lua-language-server \
   && cd lua-language-server \
   && git submodule update --init --recursive \
   && ninja -C 3rd/luamake -f compile/ninja/linux.ninja \
