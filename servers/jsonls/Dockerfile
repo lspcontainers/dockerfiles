@@ -1,12 +1,10 @@
-FROM alpine:3.13.5
+FROM alpine:3.15.0
 
 RUN apk add --no-cache \
   nodejs \
   npm
 
-ARG VERSION
-
 RUN npm install -g \
-  vscode-json-languageserver@${VERSION}
+  vscode-json-languageserver
 
 CMD [ "/usr/bin/vscode-json-languageserver", "--stdio" ]

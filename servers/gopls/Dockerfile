@@ -7,8 +7,6 @@ RUN apk add --no-cache \
 
 ENV GO111MODULE="on"
 
-ARG VERSION
-
 RUN addgroup -g 1001 gopls \
   && adduser -u 1000 -G gopls -h /home/gopls -D gopls \
   && echo '%gopls ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/gopls
@@ -27,7 +25,7 @@ RUN go install github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest \
   && go install github.com/go-delve/delve/cmd/dlv@latest \
   && go install github.com/go-delve/delve/cmd/dlv@latest \
   && go install honnef.co/go/tools/cmd/staticcheck@latest \
-  && go install golang.org/x/tools/gopls@v${VERSION}
+  && go install golang.org/x/tools/gopls@latest
 
 COPY docker_entrypoint.sh /home/gopls/docker_entrypoint.sh
 

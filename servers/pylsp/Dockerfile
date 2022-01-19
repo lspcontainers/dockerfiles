@@ -1,4 +1,4 @@
-FROM alpine:3.13.5 as build
+FROM alpine:3.15.0 as build
 
 RUN apk add --no-cache \
     build-base \
@@ -9,12 +9,10 @@ RUN apk add --no-cache \
 
 WORKDIR /venv
 
-ARG VERSION
-
-RUN /venv/bin/pip install "python-lsp-server[all]==${VERSION}"
+RUN /venv/bin/pip install "python-lsp-server[all]"
 
 
-FROM alpine:3.13.5
+FROM alpine:3.15.0
 
 RUN apk add --no-cache python3 py3-pip
 
