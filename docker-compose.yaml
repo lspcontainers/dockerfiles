@@ -15,6 +15,11 @@ services:
     build:
       context: servers/dockerls
 
+  graphql-lsp:
+    image: lspcontainers/graphql-lsp
+    build:
+      context: servers/graphql-lsp
+
   gopls:
     image: lspcontainers/gopls
     build:
