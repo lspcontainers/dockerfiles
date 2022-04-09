@@ -16,7 +16,7 @@ services:
       context: servers/dockerls
 
   graphql-lsp:
-    image: lspcontainers/graphql-lsp
+    image: lspcontainers/graphql-language-service-cli
     build:
       context: servers/graphql-lsp
 
