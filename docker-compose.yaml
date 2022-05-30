@@ -50,6 +50,11 @@ services:
     build:
       context: servers/powershell_es
 
+  prisma:
+    image: lspcontainers/prisma-language-server
+    build:
+      context: servers/prisma
+
   pylsp:
     image: lspcontainers/python-lsp-server
     build:
