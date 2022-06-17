@@ -1,20 +1,13 @@
-FROM alpine:3.15.0
+FROM golang:1.18.2-alpine
 
 RUN apk add --no-cache \
-  go \
   shadow \
+  gcc \
+  musl-dev \
+  su-exec \
   sudo
 
 ENV GO111MODULE="on"
-
-RUN addgroup -g 1001 gopls \
-  && adduser -u 1000 -G gopls -h /home/gopls -D gopls \
-  && echo '%gopls ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/gopls
-
-USER gopls
-
-ENV GOBIN="/home/gopls/.bin"
-ENV PATH="${GOBIN}:$PATH"
 
 RUN go install github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest \
   && go install github.com/ramya-rao-a/go-outline@latest \
@@ -27,6 +20,7 @@ RUN go install github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest \
   && go install honnef.co/go/tools/cmd/staticcheck@latest \
   && go install golang.org/x/tools/gopls@latest
 
-COPY docker_entrypoint.sh /home/gopls/docker_entrypoint.sh
+ENV GOCACHE /tmp/gocache
+ENV GOROOT /usr/local/go
 
-CMD [ "/home/gopls/docker_entrypoint.sh" ]
+CMD [ "gopls" ]
