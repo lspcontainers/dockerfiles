@@ -80,6 +80,11 @@ services:
     build:
       context: servers/svelteserver
 
+  tailwindcss:
+    image: lspcontainers/tailwindcss-language-server
+    build:
+      context: servers/tailwindcss
+
   terraformls:
     image: lspcontainers/terraform-ls
     build:
