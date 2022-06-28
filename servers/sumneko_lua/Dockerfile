@@ -10,10 +10,12 @@ RUN apk add --no-cache \
 WORKDIR /build
 
 # hadolint ignore=DL3003
-RUN git clone --depth 1 --branch "2.6.0" https://github.com/sumneko/lua-language-server \
+RUN git clone --depth 1 --branch "3.3.1" https://github.com/sumneko/lua-language-server \
   && cd lua-language-server \
-  && git submodule update --init --recursive \
-  && ninja -C 3rd/luamake -f compile/ninja/linux.ninja \
+  && git submodule update --depth 1 --init --recursive \
+  && cd 3rd/luamake \
+  && ./compile/install.sh \
+  && cd ../../ \
   && ./3rd/luamake/luamake rebuild
 
 FROM alpine:3.15.0
