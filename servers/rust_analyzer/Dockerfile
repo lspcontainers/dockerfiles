@@ -1,20 +1,14 @@
 FROM alpine:3.15.0
 
-RUN apk add --no-cache \
+RUN apk add -U --no-cache \
   bash \
   curl \
-  gcc
+  gcc \
+  cargo \
+  && rm -rf /var/cache/apk/*
 
-RUN curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs -o /tmp/sh.rustup.rs \
-  && chmod +x /tmp/sh.rustup.rs \
-  && /tmp/sh.rustup.rs --default-toolchain none -y \
-  && rm -rf /tmp/sh.rustup.rs \
-  && . "$HOME"/.cargo/env \
-  && rustup toolchain install nightly \
-  && rustup component add rust-analyzer-preview
+RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
 
-COPY ./docker_entrypoint.sh /docker_entrypoint.sh
+RUN apk add rust-analyzer@testing
 
-ENTRYPOINT [ "/docker_entrypoint.sh" ]
-
-CMD [ "/root/.rustup/toolchains/nightly-x86_64-unknown-linux-musl/bin/rust-analyzer" ]
+CMD [ "rust-analyzer" ]
