@@ -40,6 +40,9 @@ jobs:
           - context: omnisharp
             tag: omnisharp
 
+          - context: prisma
+            tag: prisma-language-server
+
           - context: pylsp
             tag: python-lsp-server
 
@@ -60,6 +63,9 @@ jobs:
 
           - context: svelteserver
             tag: svelte-language-server
+
+          - context: tailwindcss
+            tag: tailwindcss-language-server
 
           - context: terraformls
             tag: terraform-ls

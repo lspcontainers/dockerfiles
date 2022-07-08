@@ -50,6 +50,11 @@ services:
     build:
       context: servers/powershell_es
 
+  prisma:
+    image: lspcontainers/prisma-language-server
+    build:
+      context: servers/prisma
+
   pylsp:
     image: lspcontainers/python-lsp-server
     build:
@@ -74,6 +79,11 @@ services:
     image: lspcontainers/svelte-language-server
     build:
       context: servers/svelteserver
+
+  tailwindcss:
+    image: lspcontainers/tailwindcss-language-server
+    build:
+      context: servers/tailwindcss
 
   terraformls:
     image: lspcontainers/terraform-ls
