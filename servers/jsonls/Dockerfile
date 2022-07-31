@@ -4,6 +4,6 @@ RUN apk add --no-cache \
   nodejs \
   npm \
   && npm install -g \
-    vscode-json-languageserver
+    vscode-langservers-extracted
 
-CMD [ "vscode-json-languageserver", "--stdio" ]
+CMD [ "vscode-json-language-server", "--stdio" ]
