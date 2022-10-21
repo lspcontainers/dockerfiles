@@ -1,25 +1,5 @@
-FROM alpine:3.15.0 as build
+FROM alpine:edge
 
-RUN apk add --no-cache \
-  bash \
-  g++ \
-  gcc \
-  git \
-  ninja
+RUN apk add --update --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ lua-language-server
 
-WORKDIR /build
-
-# hadolint ignore=DL3003
-RUN git clone --depth 1 --branch "2.6.0" https://github.com/sumneko/lua-language-server \
-  && cd lua-language-server \
-  && git submodule update --init --recursive \
-  && ninja -C 3rd/luamake -f compile/ninja/linux.ninja \
-  && ./3rd/luamake/luamake rebuild
-
-FROM alpine:3.15.0
-
-WORKDIR /lua-language-server
-
-COPY --from=build /build/lua-language-server .
-
-CMD [ "/lua-language-server/bin/lua-language-server", "-E", "/lua-language-server/bin/main.lua" ]
+CMD [ "lua-language-server" ]
