@@ -1,11 +1,9 @@
-#!/bin/sh
-set -e
+#!/bin/bash
+set -eu pipefail
 
-GOPLS_USER="$(id -u)"
-GOPLS_GROUP="$(id -g)"
+LSPCONTAINERS_GROUP=$(id -g)
+LSPCONTAINERS_USER=$(id -u)
 
-sudo usermod -u $GOPLS_USER gopls \
-  && sudo groupmod -g $GOPLS_GROUP gopls \
-  && sudo chown -R "$GOPLS_USER:$GOPLS_GROUP" /home/gopls \
-  && echo "$GOPLS_USER:$GOPLS_GROUP" \
-  && exec "gopls"
+sudo usermod -u $LSPCONTAINERS_USER lspcontainers \
+    && sudo groupmod -g $LSPCONTAINERS_GROUP lspcontainers || true \
+    && exec "gopls"
