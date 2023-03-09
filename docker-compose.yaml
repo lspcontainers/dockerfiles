@@ -10,6 +10,11 @@ services:
     build:
       context: servers/clangd
 
+  denols:
+    image: lspcontainers/denols
+    build:
+      context: servers/denols
+
   dockerls:
     image: lspcontainers/docker-language-server
     build:
