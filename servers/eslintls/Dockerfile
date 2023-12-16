@@ -1,5 +1,7 @@
 FROM alpine:3.15.0
 
+WORKDIR /tmp
+
 RUN apk add --no-cache \
   nodejs \
   npm \
