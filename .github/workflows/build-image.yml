@@ -92,7 +92,7 @@ jobs:
 
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # TODO: Replace w/ Github Action - https://github.com/lspcontainers/dockerfiles/runs/2724936969?check_suite_focus=true#step:4:7
       - name: Run hadolint
@@ -102,21 +102,21 @@ jobs:
           --rm
           --volume $(pwd):/code
           --workdir /code
-          hadolint/hadolint:2.4.1-alpine
+          hadolint/hadolint:alpine
           servers/${{ matrix.context }}/Dockerfile
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v3
 
       - name: Login to Docker Hub
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
         if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build and push to Docker Hub
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v5
         with:
           context: servers/${{ matrix.context }}
           push: ${{ github.ref == 'refs/heads/main' }}
