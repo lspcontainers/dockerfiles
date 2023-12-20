@@ -1,4 +1,5 @@
 version: "3.8"
+
 services:
   bashls:
     image: lspcontainers/bash-language-server
@@ -20,15 +21,20 @@ services:
     build:
       context: servers/dockerls
 
-  graphql-lsp:
-    image: lspcontainers/graphql-language-service-cli
+  eslintls:
+    image: lspcontainers/eslint-language-server
     build:
-      context: servers/graphql-lsp
+      context: servers/eslintls
 
   gopls:
     image: lspcontainers/gopls
     build:
       context: servers/gopls
+
+  graphql-lsp:
+    image: lspcontainers/graphql-language-service-cli
+    build:
+      context: servers/graphql-lsp
 
   html:
     image: lspcontainers/html-language-server
@@ -44,11 +50,6 @@ services:
     image: lspcontainers/json-language-server
     build:
       context: servers/jsonls
-
-  eslintls:
-    image: lspcontainers/eslint-language-server
-    build:
-      context: servers/eslintls
 
   omnisharp:
     image: lspcontainers/csharp-language-server
@@ -80,6 +81,11 @@ services:
     build:
       context: servers/rust_analyzer
 
+  solargraph:
+    image: lspcontainers/solargraph
+    build:
+      context: servers/solargraph
+
   sumneko_lua:
     image: lspcontainers/lua-language-server
     build:
@@ -105,12 +111,17 @@ services:
     build:
       context: servers/tsserver
 
-  yamlls:
-    image: lspcontainers/yaml-language-server
+  volar:
+    image: lspcontainers/volar
     build:
-      context: servers/yamlls
+      context: servers/volar
 
   vuels:
     image: lspcontainers/vue-language-server
     build:
       context: servers/vuels
+
+  yamlls:
+    image: lspcontainers/yaml-language-server
+    build:
+      context: servers/yamlls

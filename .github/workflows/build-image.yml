@@ -21,14 +21,20 @@ jobs:
           - context: clangd
             tag: clangd-language-server
 
+          - context: denols
+            tag: denols 
+
           - context: dockerls
             tag: docker-language-server
 
-          - context: graphql-lsp
-            tag: graphql-language-service-cli
+          - context: eslintls
+            tag: eslint-language-server
 
           - context: gopls
             tag: gopls
+
+          - context: graphql-lsp
+            tag: graphql-language-service-cli
 
           - context: html
             tag: html-language-server
@@ -39,11 +45,11 @@ jobs:
           - context: jsonls
             tag: json-language-server
 
-          - context: eslintls
-            tag: eslint-language-server
-
           - context: omnisharp
             tag: omnisharp
+
+          - context: powershell_es
+            tag: powershell-language-server
 
           - context: prisma
             tag: prisma-language-server
@@ -53,9 +59,6 @@ jobs:
 
           - context: pyright
             tag: pyright-langserver
-
-          - context: powershell_es
-            tag: powershell-language-server
 
           - context: rust_analyzer
             tag: rust-analyzer
@@ -77,6 +80,9 @@ jobs:
 
           - context: tsserver
             tag: typescript-language-server
+
+          - context: volar
+            tag: volar
 
           - context: vuels
             tag: vue-language-server
