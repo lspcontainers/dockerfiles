@@ -102,7 +102,7 @@ jobs:
           --rm
           --volume $(pwd):/code
           --workdir /code
-          hadolint/hadolint:alpine
+          hadolint/hadolint:latest-alpine
           servers/${{ matrix.context }}/Dockerfile
 
       - name: Set up Docker Buildx
