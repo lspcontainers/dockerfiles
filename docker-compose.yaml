@@ -45,6 +45,11 @@ services:
     build:
       context: servers/jsonls
 
+  eslintls:
+    image: lspcontainers/eslint-language-server
+    build:
+      context: servers/eslintls
+
   omnisharp:
     image: lspcontainers/csharp-language-server
     build:

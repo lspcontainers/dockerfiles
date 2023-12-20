@@ -39,6 +39,9 @@ jobs:
           - context: jsonls
             tag: json-language-server
 
+          - context: eslintls
+            tag: eslint-language-server
+
           - context: omnisharp
             tag: omnisharp
 
