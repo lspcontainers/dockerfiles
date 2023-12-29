@@ -51,6 +51,11 @@ services:
     build:
       context: servers/jsonls
 
+  lemminx:
+    image: lspcontainers/lemminx
+    build:
+      context: servers/lemminx
+
   omnisharp:
     image: lspcontainers/csharp-language-server
     build:
