@@ -45,6 +45,9 @@ jobs:
           - context: jsonls
             tag: json-language-server
 
+          - context: lemminx
+            tag: lemminx
+
           - context: omnisharp
             tag: omnisharp
 
