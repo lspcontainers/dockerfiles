@@ -2,8 +2,8 @@ FROM alpine
 
 RUN apk add --no-cache nodejs npm
 
-ENV VERSION=1.8.11
+ENV VERSION=2.0.3
 
-RUN npm install -g @vue/language-server@$VERSION
+RUN npm install -g @vue/language-server@$VERSION @vue/typescript-plugin
 
 CMD [ "vue-language-server", "--stdio" ]
