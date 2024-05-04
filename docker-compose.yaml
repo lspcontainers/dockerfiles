@@ -71,6 +71,11 @@ services:
     build:
       context: servers/prisma
 
+  puppet:
+    image: lspcontainers/puppet
+    build:
+      context: servers/puppet
+
   pylsp:
     image: lspcontainers/python-lsp-server
     build:
