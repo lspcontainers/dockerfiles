@@ -57,6 +57,9 @@ jobs:
           - context: prisma
             tag: prisma-language-server
 
+          - context: puppet
+            tag: puppet
+
           - context: pylsp
             tag: python-lsp-server
 
