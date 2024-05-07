@@ -48,6 +48,9 @@ jobs:
           - context: lemminx
             tag: lemminx
 
+          - context: markdown_oxide
+            tag: markdown-oxide
+
           - context: omnisharp
             tag: omnisharp
 
