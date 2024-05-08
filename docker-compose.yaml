@@ -56,6 +56,11 @@ services:
     build:
       context: servers/lemminx
 
+  markdown_oxide:
+    image: lspcontainers/markdown-oxide
+    build:
+      context: servers/markdown_oxide
+
   omnisharp:
     image: lspcontainers/csharp-language-server
     build:
