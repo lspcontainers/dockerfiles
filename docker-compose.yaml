@@ -6,6 +6,11 @@ services:
     build:
       context: servers/bashls
 
+  ccls:
+    image: lspcontainers/ccls
+    build:
+      context: servers/ccls
+
   clangd:
     image: lspcontainers/clangd-language-server
     build:

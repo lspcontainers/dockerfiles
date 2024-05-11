@@ -18,6 +18,9 @@ jobs:
           - context: bashls
             tag: bash-language-server
 
+          - context: ccls
+            tag: ccls
+
           - context: clangd
             tag: clangd-language-server
 
