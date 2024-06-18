@@ -78,6 +78,9 @@ jobs:
           - context: tailwindcss
             tag: tailwindcss-language-server
 
+          - context: taplo
+            tag: taplo-language-server
+
           - context: terraformls
             tag: terraform-ls
 
