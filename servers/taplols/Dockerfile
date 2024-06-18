@@ -1,9 +1,3 @@
-FROM alpine
-
-RUN apk add --no-cache \
-  nodejs \
-  npm \
-  && npm install -g \
-    @taplo/lsp
+FROM tamasfe/taplo:full
 
 CMD [ "taplo", "lsp", "stdio" ]
