@@ -36,6 +36,9 @@ jobs:
           - context: graphql-lsp
             tag: graphql-language-service-cli
 
+          - context: helmls
+            tag: helm-language-server
+
           - context: html
             tag: html-language-server
 

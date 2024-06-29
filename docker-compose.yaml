@@ -36,6 +36,11 @@ services:
     build:
       context: servers/graphql-lsp
 
+  helmls:
+    image: lspcontainers/helm-language-server
+    build:
+      context: servers/helmls
+
   html:
     image: lspcontainers/html-language-server
     build:
