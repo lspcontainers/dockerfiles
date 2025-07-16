@@ -1,4 +1,4 @@
-name: Push LSP Docker Images
+name: build-and-push
 
 on:
   pull_request:
