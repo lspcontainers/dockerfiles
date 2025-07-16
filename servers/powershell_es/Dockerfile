@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/powershell:alpine
+FROM mcr.microsoft.com/powershell:7.5-alpine-3.20
 
 WORKDIR /srv
 

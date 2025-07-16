@@ -1,4 +1,4 @@
-FROM alpine AS build
+FROM alpine:3.22.1 AS build
 
 ARG TF_LS_VERSION=0.29.3
 ARG TF_VERSION=1.3.3
@@ -28,7 +28,7 @@ RUN curl --proto '=https' \
   && unzip terraform-ls_${TF_LS_VERSION}_linux_amd64.zip \
   && unzip terraform_${TF_VERSION}_linux_amd64.zip
 
-FROM alpine
+FROM alpine:3.22.1
 
 COPY --from=build /build/terraform-ls /usr/bin/terraform-ls
 COPY --from=build /build/terraform /usr/bin/terraform

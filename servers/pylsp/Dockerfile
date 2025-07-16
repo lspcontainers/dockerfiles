@@ -1,4 +1,4 @@
-FROM alpine as build
+FROM alpine:3.22.1 as build
 
 RUN apk add --no-cache \
     build-base \
@@ -12,7 +12,7 @@ WORKDIR /venv
 RUN /venv/bin/pip install "python-lsp-server[all]"
 
 
-FROM alpine
+FROM alpine:3.22.1
 
 RUN apk add --no-cache python3 py3-pip
 

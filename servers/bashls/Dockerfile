@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.22.1
 
 # using npm breaks shellcheck download of its binary from api.github.com
 # running shellcheck -V forces it to download its binary during build
