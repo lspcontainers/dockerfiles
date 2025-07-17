@@ -1,6 +1,9 @@
 FROM debian:12.11-slim
 # The binary requires gnu-libc and will not work on alpine
 
+ARG VERSION=0.27.0
+LABEL version="${VERSION}"
+
 WORKDIR /tmp
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -11,7 +14,7 @@ RUN apt-get update -y \
   ca-certificates=20230311+deb12u1 \
   unzip=6.0-28 \
 && update-ca-certificates \
-&& curl -sL -O https://github.com/redhat-developer/vscode-xml/releases/download/0.27.0/lemminx-linux.zip  \
+&& curl -sL -O https://github.com/redhat-developer/vscode-xml/releases/download/${VERSION}/lemminx-linux.zip  \
 && unzip lemminx-linux.zip  \
 && rm -rf lemminx-linux.zip  \
 && apt-get remove curl unzip -y \

@@ -1,5 +1,8 @@
 FROM alpine:3.22.1
 
+ARG VERSION=0.19.1
+LABEL version="${VERSION}"
+
 RUN apk add --no-cache \
     bash=5.2.37-r0 \
     git=2.49.1-r0 \
@@ -28,7 +31,7 @@ RUN go install github.com/uudashr/gopkgs/v2/cmd/gopkgs@v2.1.2 \
     && go install github.com/haya14busa/goplay/cmd/goplay@v1.0.0 \
     && go install github.com/go-delve/delve/cmd/dlv@v1.25.0 \
     && go install honnef.co/go/tools/cmd/staticcheck@2025.1.1 \
-    && go install golang.org/x/tools/gopls@v0.19.1
+    && go install golang.org/x/tools/gopls@v${VERSION}
 
 COPY --chown=lspcontainers:lspcontainers \
     docker_entrypoint.sh /home/lspcontainers/docker_entrypoint.sh

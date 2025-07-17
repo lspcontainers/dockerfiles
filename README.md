@@ -117,13 +117,16 @@ Want to add support for a new language? We'd love your contribution!
 3. **Write a Dockerfile** following our patterns:
    ```dockerfile
    FROM alpine:3.22.1
-   
+
+   ARG VERSION=1.2.3
+   LABEL version="${VERSION}"
+
    RUN apk add --no-cache \
      nodejs=22.16.0-r2 \
      npm=11.3.0-r0 \
      && npm install -g \
-       your-language-server@1.2.3
-   
+       your-language-server@${VERSION}
+
    CMD [ "your-language-server", "--stdio" ]
    ```
 4. **Add to docker-compose.yaml**
@@ -157,6 +160,42 @@ docker pull lspcontainers/gopls:latest
 docker pull lspcontainers/gopls:v0.19.1
 ```
 
+### 🔄 **Updating Dockerfile Versions**
+
+Each Dockerfile includes version information that controls both the language server version and container tagging:
+
+```dockerfile
+# Version is declared at the top
+ARG VERSION=1.2.3
+LABEL version="${VERSION}"
+
+# Version variable is used in installation
+RUN npm install -g your-language-server@${VERSION}
+```
+
+**To update a language server version:**
+
+1. **Edit the Dockerfile** in `servers/your-server/Dockerfile`
+2. **Update the VERSION argument** to the new version
+3. **Test the build** locally: `docker-compose build your-server`
+4. **Submit a pull request** with your changes
+
+The CI/CD pipeline automatically:
+- Extracts the version from the `LABEL version` directive
+- Tags the image with both `latest` and the specific version
+- Pushes to Docker Hub with proper versioning
+
+**Example version update:**
+```dockerfile
+# Before
+ARG VERSION=1.2.3
+
+# After  
+ARG VERSION=1.3.0
+```
+
+This ensures reproducible builds and allows users to pin to specific language server versions.
+
 ## 📖 Usage Examples
 
 For configuration examples and advanced usage, see the **[lspcontainers.nvim documentation](https://github.com/lspcontainers/lspcontainers.nvim)**.
@@ -182,14 +221,6 @@ make test-all
 - **100% reproducible builds** with pinned versions
 - **Multi-architecture support** (amd64, arm64)
 - **Active community** with regular contributions
-
----
-
-## 🎯 Why LSP Containers?
-
-**Before**: Install language servers locally, deal with version conflicts, environment setup headaches
-
-**After**: `docker run` and you're ready to code with any language server, anywhere
 
 ---
 

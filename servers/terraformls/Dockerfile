@@ -1,7 +1,9 @@
 FROM alpine:3.22.1 AS build
 
-ARG TF_LS_VERSION=0.36.5
+ARG VERSION=0.36.5
+ARG TF_LS_VERSION=${VERSION}
 ARG TF_VERSION=1.12.2
+LABEL version="${VERSION}"
 
 RUN apk add --no-cache --virtual \
   build-deps \

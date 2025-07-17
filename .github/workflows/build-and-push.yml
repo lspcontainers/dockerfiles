@@ -118,9 +118,23 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
         if: ${{ github.ref == 'refs/heads/main' }}
 
+      - name: Extract version from Dockerfile
+        id: version
+        run: |
+          VERSION=$(grep "ARG VERSION=" servers/${{ matrix.context }}/Dockerfile | cut -d'=' -f2 || echo "unknown")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          if [ "$VERSION" != "unknown" ]; then
+            TAGS="lspcontainers/${{ matrix.tag }}:latest,lspcontainers/${{ matrix.tag }}:$VERSION"
+            echo "tags=$TAGS" >> $GITHUB_OUTPUT
+          else
+            TAGS="lspcontainers/${{ matrix.tag }}:latest"
+            echo "tags=$TAGS" >> $GITHUB_OUTPUT
+          fi
+          echo "🏷️  Tags that will be used: $TAGS"
+
       - name: Build and push to Docker Hub
         uses: docker/build-push-action@v5
         with:
           context: servers/${{ matrix.context }}
           push: ${{ github.ref == 'refs/heads/main' }}
-          tags: lspcontainers/${{ matrix.tag }}:latest
+          tags: ${{ steps.version.outputs.tags }}
