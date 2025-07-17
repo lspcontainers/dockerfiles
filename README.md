@@ -23,35 +23,35 @@ Perfect for:
 
 ## 🛠️ Supported Language Servers
 
-| Language | Server | Container |
-|----------|--------|-----------|
-| **Bash** | bash-language-server | `lspcontainers/bash-language-server` |
-| **C/C++** | clangd | `lspcontainers/clangd-language-server` |
-| **C#** | omnisharp | `lspcontainers/omnisharp-language-server` |
-| **CSS/SCSS/Less** | vscode-css-languageserver | `lspcontainers/css-language-server` |
-| **Deno** | deno-lsp | `lspcontainers/deno-language-server` |
-| **Docker** | dockerfile-ls | `lspcontainers/docker-language-server` |
-| **ESLint** | eslint-languageserver | `lspcontainers/eslint-language-server` |
-| **Go** | gopls | `lspcontainers/gopls` |
-| **GraphQL** | graphql-language-service | `lspcontainers/graphql-language-server` |
-| **HTML** | html-languageserver | `lspcontainers/html-language-server` |
-| **JavaScript/TypeScript** | typescript-language-server | `lspcontainers/typescript-language-server` |
-| **JSON** | vscode-json-languageserver | `lspcontainers/json-language-server` |
-| **Lua** | lua-language-server | `lspcontainers/lua-language-server` |
-| **PHP** | intelephense | `lspcontainers/php-language-server` |
-| **PowerShell** | powershell-es | `lspcontainers/powershell-language-server` |
-| **Prisma** | prisma-language-server | `lspcontainers/prisma-language-server` |
-| **Python** | pylsp | `lspcontainers/python-lsp-server` |
-| **Python** | pyright | `lspcontainers/pyright-language-server` |
-| **Ruby** | solargraph | `lspcontainers/ruby-language-server` |
-| **Rust** | rust-analyzer | `lspcontainers/rust-analyzer` |
-| **Svelte** | svelte-language-server | `lspcontainers/svelte-language-server` |
-| **Tailwind CSS** | tailwindcss-language-server | `lspcontainers/tailwindcss-language-server` |
-| **Terraform** | terraform-ls | `lspcontainers/terraform-ls` |
-| **Vue** | volar | `lspcontainers/volar-language-server` |
-| **Vue** | vuels (legacy) | `lspcontainers/vue-language-server` |
-| **XML** | lemminx | `lspcontainers/xml-language-server` |
-| **YAML** | yaml-language-server | `lspcontainers/yaml-language-server` |
+| Language | Server | Container | Version |
+|----------|--------|-----------|---------|
+| **Bash** | bash-language-server | `lspcontainers/bash-language-server` | ![Version](https://img.shields.io/badge/version-5.6.0-blue) |
+| **C/C++** | clangd | `lspcontainers/clangd-language-server` | ![Version](https://img.shields.io/badge/version-20.1.8-blue) |
+| **C#** | omnisharp | `lspcontainers/omnisharp-language-server` | ![Version](https://img.shields.io/badge/version-1.39.12-blue) |
+| **CSS/SCSS/Less** | vscode-css-languageserver | `lspcontainers/css-language-server` | ![Version](https://img.shields.io/badge/version-4.10.0-blue) |
+| **Deno** | deno-lsp | `lspcontainers/deno-language-server` | ![Version](https://img.shields.io/badge/version-2.4.2-blue) |
+| **Docker** | dockerfile-ls | `lspcontainers/docker-language-server` | ![Version](https://img.shields.io/badge/version-0.14.0-blue) |
+| **ESLint** | eslint-languageserver | `lspcontainers/eslint-language-server` | ![Version](https://img.shields.io/badge/version-latest-blue) |
+| **Go** | gopls | `lspcontainers/gopls` | ![Version](https://img.shields.io/badge/version-0.19.1-blue) |
+| **GraphQL** | graphql-language-service | `lspcontainers/graphql-language-server` | ![Version](https://img.shields.io/badge/version-3.5.0-blue) |
+| **HTML** | html-languageserver | `lspcontainers/html-language-server` | ![Version](https://img.shields.io/badge/version-1.4.0-blue) |
+| **JavaScript/TypeScript** | typescript-language-server | `lspcontainers/typescript-language-server` | ![Version](https://img.shields.io/badge/version-4.3.4-blue) |
+| **JSON** | vscode-json-languageserver | `lspcontainers/json-language-server` | ![Version](https://img.shields.io/badge/version-4.10.0-blue) |
+| **Lua** | lua-language-server | `lspcontainers/lua-language-server` | ![Version](https://img.shields.io/badge/version-3.14.0-blue) |
+| **PHP** | intelephense | `lspcontainers/php-language-server` | ![Version](https://img.shields.io/badge/version-1.14.4-blue) |
+| **PowerShell** | powershell-es | `lspcontainers/powershell-language-server` | ![Version](https://img.shields.io/badge/version-4.3.0-blue) |
+| **Prisma** | prisma-language-server | `lspcontainers/prisma-language-server` | ![Version](https://img.shields.io/badge/version-6.9.1-blue) |
+| **Python** | pylsp | `lspcontainers/python-lsp-server` | ![Version](https://img.shields.io/badge/version-1.12.0-blue) |
+| **Python** | pyright | `lspcontainers/pyright-language-server` | ![Version](https://img.shields.io/badge/version-1.1.377-blue) |
+| **Ruby** | solargraph | `lspcontainers/ruby-language-server` | ![Version](https://img.shields.io/badge/version-0.55.1-blue) |
+| **Rust** | rust-analyzer | `lspcontainers/rust-analyzer` | ![Version](https://img.shields.io/badge/version-1.88.0-blue) |
+| **Svelte** | svelte-language-server | `lspcontainers/svelte-language-server` | ![Version](https://img.shields.io/badge/version-0.17.16-blue) |
+| **Tailwind CSS** | tailwindcss-language-server | `lspcontainers/tailwindcss-language-server` | ![Version](https://img.shields.io/badge/version-0.14.25-blue) |
+| **Terraform** | terraform-ls | `lspcontainers/terraform-ls` | ![Version](https://img.shields.io/badge/version-0.36.5-blue) |
+| **Vue** | volar | `lspcontainers/volar-language-server` | ![Version](https://img.shields.io/badge/version-1.8.11-blue) |
+| **Vue** | vuels (legacy) | `lspcontainers/vue-language-server` | ![Version](https://img.shields.io/badge/version-0.8.5-blue) |
+| **XML** | lemminx | `lspcontainers/xml-language-server` | ![Version](https://img.shields.io/badge/version-0.27.0-blue) |
+| **YAML** | yaml-language-server | `lspcontainers/yaml-language-server` | ![Version](https://img.shields.io/badge/version-1.18.0-blue) |
 
 ## 🚀 Quick Start
 
