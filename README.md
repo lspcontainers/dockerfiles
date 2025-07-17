@@ -199,7 +199,6 @@ This ensures reproducible builds and allows users to pin to specific language se
 ### 📊 Project Stats
 
 - **25+ Language Servers** supported
-- **Automated daily builds** ensuring freshness
 - **100% reproducible builds** with pinned versions
 - **Multi-architecture support** (amd64, arm64)
 - **Active community** with regular contributions
