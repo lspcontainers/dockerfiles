@@ -5,7 +5,7 @@ WORKDIR /srv
 RUN apk add --no-cache \
   curl=8.12.1-r0 \
   unzip=6.0-r14 \
-  && curl -L -o PowerShellEditorServices.zip https://github.com/PowerShell/PowerShellEditorServices/releases/download/v3.26.0/PowerShellEditorServices.zip \
+  && curl -L -o PowerShellEditorServices.zip https://github.com/PowerShell/PowerShellEditorServices/releases/download/v4.3.0/PowerShellEditorServices.zip \
   && unzip PowerShellEditorServices.zip \
   && rm -fr PowerShellEditorServices.zip
 
