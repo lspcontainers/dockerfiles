@@ -196,24 +196,6 @@ ARG VERSION=1.3.0
 
 This ensures reproducible builds and allows users to pin to specific language server versions.
 
-## 📖 Usage Examples
-
-For configuration examples and advanced usage, see the **[lspcontainers.nvim documentation](https://github.com/lspcontainers/lspcontainers.nvim)**.
-
-## 🔍 Development Workflow
-
-### Local Development
-```bash
-# Test a single container
-make test-gopls
-
-# Lint all Dockerfiles
-make lint
-
-# Build and test all containers
-make test-all
-```
-
 ### 📊 Project Stats
 
 - **25+ Language Servers** supported
