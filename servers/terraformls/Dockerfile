@@ -1,12 +1,14 @@
-FROM alpine AS build
+FROM alpine:3.22.1 AS build
 
-ARG TF_LS_VERSION=0.29.3
-ARG TF_VERSION=1.3.3
+ARG VERSION=0.36.5
+ARG TF_LS_VERSION=${VERSION}
+ARG TF_VERSION=1.12.2
+LABEL version="${VERSION}"
 
 RUN apk add --no-cache --virtual \
   build-deps \
-  curl \
-  gnupg
+  curl=8.14.1-r1 \
+  gnupg=2.4.7-r0
 
 WORKDIR /build
 
@@ -25,10 +27,10 @@ RUN curl --proto '=https' \
   && gpg --verify terraform_${TF_VERSION}_SHA256SUMS.sig terraform_${TF_VERSION}_SHA256SUMS \
   && sha256sum -c SHA256SUMS \
   && sha256sum -c TERRAFORM_SHA256SUMS \
-  && unzip terraform-ls_${TF_LS_VERSION}_linux_amd64.zip \
-  && unzip terraform_${TF_VERSION}_linux_amd64.zip
+  && unzip -o terraform-ls_${TF_LS_VERSION}_linux_amd64.zip \
+  && unzip -o terraform_${TF_VERSION}_linux_amd64.zip
 
-FROM alpine
+FROM alpine:3.22.1
 
 COPY --from=build /build/terraform-ls /usr/bin/terraform-ls
 COPY --from=build /build/terraform /usr/bin/terraform

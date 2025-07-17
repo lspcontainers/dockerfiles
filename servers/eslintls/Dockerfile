@@ -1,9 +1,12 @@
-FROM alpine
+FROM alpine:3.22.1
+
+ARG VERSION=latest
+LABEL version="${VERSION}"
 
 RUN apk add --no-cache \
-    git \
-    nodejs \
-    npm
+    git=2.49.1-r0 \
+    nodejs=22.16.0-r2 \
+    npm=11.3.0-r0
 
 WORKDIR /tmp
 
