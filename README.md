@@ -1,6 +1,6 @@
 # lspcontainers/dockerfiles
 
-🚀 **Dockerfiles for Language Server Protocol (LSP) servers** - Making development environments consistent, portable, and easy to manage.
+🚀 **Dockerfiles for Language Server Protocol (LSP) servers** - Containerized language servers for use with [lspcontainers.nvim](https://github.com/lspcontainers/lspcontainers.nvim).
 
 [![Docker Hub](https://img.shields.io/badge/Docker%20Hub-lspcontainers-blue?logo=docker)](https://hub.docker.com/u/lspcontainers)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/lspcontainers/dockerfiles/build-image.yml?branch=main)](https://github.com/lspcontainers/dockerfiles/actions)
@@ -8,46 +8,60 @@
 
 ## 🌟 What is this?
 
-This repository provides **production-ready Docker containers** for 25+ Language Server Protocol (LSP) servers, enabling you to run language servers in isolated, reproducible environments. Perfect for:
+This repository provides **production-ready Docker containers** for 25+ Language Server Protocol (LSP) servers, designed to work seamlessly with the **[lspcontainers.nvim](https://github.com/lspcontainers/lspcontainers.nvim)** Neovim plugin.
 
-- **Consistent development environments** across teams
-- **CI/CD pipelines** with reliable tooling
-- **Remote development** with containerized language servers
-- **Editor/IDE integration** without local language server installation
+### 🎯 **How it works:**
+1. **Docker containers** provide isolated, reproducible LSP server environments
+2. **[lspcontainers.nvim](https://github.com/lspcontainers/lspcontainers.nvim)** plugin automatically manages these containers in Neovim
+3. **Zero local installation** - no need to install language servers on your system
+
+Perfect for:
+- **Consistent development environments** across teams and machines
+- **Clean system** - no language server pollution on your host
+- **Reproducible builds** with pinned package versions
+- **Easy switching** between language server versions
 
 ## 🛠️ Supported Language Servers
 
-| Language | Server | Container | Latest Version |
-|----------|--------|-----------|----------------|
-| **Bash** | bash-language-server | `lspcontainers/bash-language-server` | ![Version](https://img.shields.io/docker/v/lspcontainers/bash-language-server?sort=semver) |
-| **C/C++** | clangd | `lspcontainers/clangd-language-server` | ![Version](https://img.shields.io/docker/v/lspcontainers/clangd-language-server?sort=semver) |
-| **C#** | omnisharp | `lspcontainers/omnisharp-language-server` | ![Version](https://img.shields.io/docker/v/lspcontainers/omnisharp-language-server?sort=semver) |
-| **Docker** | dockerfile-ls | `lspcontainers/docker-language-server` | ![Version](https://img.shields.io/docker/v/lspcontainers/docker-language-server?sort=semver) |
-| **Go** | gopls | `lspcontainers/gopls` | ![Version](https://img.shields.io/docker/v/lspcontainers/gopls?sort=semver) |
-| **HTML** | html-languageserver | `lspcontainers/html-language-server` | ![Version](https://img.shields.io/docker/v/lspcontainers/html-language-server?sort=semver) |
-| **JavaScript/TypeScript** | typescript-language-server | `lspcontainers/typescript-language-server` | ![Version](https://img.shields.io/docker/v/lspcontainers/typescript-language-server?sort=semver) |
-| **JSON** | vscode-json-languageserver | `lspcontainers/json-language-server` | ![Version](https://img.shields.io/docker/v/lspcontainers/json-language-server?sort=semver) |
-| **Lua** | lua-language-server | `lspcontainers/lua-language-server` | ![Version](https://img.shields.io/docker/v/lspcontainers/lua-language-server?sort=semver) |
-| **PHP** | intelephense | `lspcontainers/php-language-server` | ![Version](https://img.shields.io/docker/v/lspcontainers/php-language-server?sort=semver) |
-| **Python** | pylsp/pyright | `lspcontainers/python-lsp-server` | ![Version](https://img.shields.io/docker/v/lspcontainers/python-lsp-server?sort=semver) |
-| **Ruby** | solargraph | `lspcontainers/ruby-language-server` | ![Version](https://img.shields.io/docker/v/lspcontainers/ruby-language-server?sort=semver) |
-| **Rust** | rust-analyzer | `lspcontainers/rust-analyzer` | ![Version](https://img.shields.io/docker/v/lspcontainers/rust-analyzer?sort=semver) |
-| **YAML** | yaml-language-server | `lspcontainers/yaml-language-server` | ![Version](https://img.shields.io/docker/v/lspcontainers/yaml-language-server?sort=semver) |
-| *And 10+ more...* | | | |
+| Language | Server | Container |
+|----------|--------|-----------|
+| **Bash** | bash-language-server | `lspcontainers/bash-language-server` |
+| **C/C++** | clangd | `lspcontainers/clangd-language-server` |
+| **C#** | omnisharp | `lspcontainers/omnisharp-language-server` |
+| **CSS/SCSS/Less** | vscode-css-languageserver | `lspcontainers/css-language-server` |
+| **Deno** | deno-lsp | `lspcontainers/deno-language-server` |
+| **Docker** | dockerfile-ls | `lspcontainers/docker-language-server` |
+| **ESLint** | eslint-languageserver | `lspcontainers/eslint-language-server` |
+| **Go** | gopls | `lspcontainers/gopls` |
+| **GraphQL** | graphql-language-service | `lspcontainers/graphql-language-server` |
+| **HTML** | html-languageserver | `lspcontainers/html-language-server` |
+| **JavaScript/TypeScript** | typescript-language-server | `lspcontainers/typescript-language-server` |
+| **JSON** | vscode-json-languageserver | `lspcontainers/json-language-server` |
+| **Lua** | lua-language-server | `lspcontainers/lua-language-server` |
+| **PHP** | intelephense | `lspcontainers/php-language-server` |
+| **PowerShell** | powershell-es | `lspcontainers/powershell-language-server` |
+| **Prisma** | prisma-language-server | `lspcontainers/prisma-language-server` |
+| **Python** | pylsp | `lspcontainers/python-lsp-server` |
+| **Python** | pyright | `lspcontainers/pyright-language-server` |
+| **Ruby** | solargraph | `lspcontainers/ruby-language-server` |
+| **Rust** | rust-analyzer | `lspcontainers/rust-analyzer` |
+| **Svelte** | svelte-language-server | `lspcontainers/svelte-language-server` |
+| **Tailwind CSS** | tailwindcss-language-server | `lspcontainers/tailwindcss-language-server` |
+| **Terraform** | terraform-ls | `lspcontainers/terraform-ls` |
+| **Vue** | volar | `lspcontainers/volar-language-server` |
+| **Vue** | vuels (legacy) | `lspcontainers/vue-language-server` |
+| **XML** | lemminx | `lspcontainers/xml-language-server` |
+| **YAML** | yaml-language-server | `lspcontainers/yaml-language-server` |
 
 ## 🚀 Quick Start
 
-### Using Pre-built Images
+### Using with lspcontainers.nvim (Recommended)
 
-```bash
-# Pull and run a language server
-docker run -it lspcontainers/typescript-language-server
+These containers are designed to work with the **[lspcontainers.nvim](https://github.com/lspcontainers/lspcontainers.nvim)** plugin.
 
-# Use with your editor (example with neovim)
-docker run -v $(pwd):/workspace lspcontainers/gopls
-```
+👉 **[See the plugin documentation](https://github.com/lspcontainers/lspcontainers.nvim)** for installation and setup instructions.
 
-### Building Locally
+### Building Containers Locally
 
 ```bash
 # Clone the repository
@@ -55,7 +69,7 @@ git clone https://github.com/lspcontainers/dockerfiles.git
 cd dockerfiles
 
 # Build a specific server
-docker-compose build typescript-language-server
+docker-compose build gopls
 
 # Build all servers
 docker-compose build
@@ -145,35 +159,7 @@ docker pull lspcontainers/gopls:v0.19.1
 
 ## 📖 Usage Examples
 
-### **With VS Code**
-```json
-{
-  "languageserver": {
-    "golang": {
-      "command": "docker",
-      "args": ["run", "-i", "--rm", "-v", "${workspaceFolder}:/workspace", "lspcontainers/gopls"],
-      "rootPatterns": ["go.mod", ".git/"],
-      "filetypes": ["go"]
-    }
-  }
-}
-```
-
-### **With Neovim**
-```lua
-require('lspconfig').gopls.setup {
-  cmd = {"docker", "run", "-i", "--rm", "-v", vim.fn.getcwd() .. ":/workspace", "lspcontainers/gopls"}
-}
-```
-
-### **CI/CD Integration**
-```yaml
-# GitHub Actions example
-- name: Check Go code with gopls
-  run: |
-    docker run --rm -v ${{ github.workspace }}:/workspace \
-      lspcontainers/gopls check /workspace
-```
+For configuration examples and advanced usage, see the **[lspcontainers.nvim documentation](https://github.com/lspcontainers/lspcontainers.nvim)**.
 
 ## 🔍 Development Workflow
 
