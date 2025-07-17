@@ -133,11 +133,20 @@ jobs:
             echo "tags=$TAGS" >> $GITHUB_OUTPUT
           fi
           echo "🏷️  Tags that will be used: $TAGS"
+          
+          # Set platforms based on container compatibility
+          if [ "${{ matrix.context }}" = "powershell_es" ]; then
+            echo "platforms=linux/amd64" >> $GITHUB_OUTPUT
+            echo "🏗️  PowerShell ES: Building for amd64 only (ARM64 not supported by Microsoft PowerShell base image)"
+          else
+            echo "platforms=linux/amd64,linux/arm64" >> $GITHUB_OUTPUT
+            echo "🏗️  Building for platforms: linux/amd64,linux/arm64"
+          fi
 
       - name: Build and push to Docker Hub
         uses: docker/build-push-action@v5
         with:
           context: servers/${{ matrix.context }}
-          platforms: linux/amd64,linux/arm64
+          platforms: ${{ steps.version.outputs.platforms }}
           push: ${{ github.ref == 'refs/heads/main' }}
           tags: ${{ steps.version.outputs.tags }}
