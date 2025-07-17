@@ -1,12 +1,12 @@
 FROM alpine:3.22.1 AS build
 
-ARG TF_LS_VERSION=0.29.3
-ARG TF_VERSION=1.3.3
+ARG TF_LS_VERSION=0.36.0
+ARG TF_VERSION=1.10.0
 
 RUN apk add --no-cache --virtual \
   build-deps \
-  curl \
-  gnupg
+  curl=8.14.1-r1 \
+  gnupg=2.4.7-r0
 
 WORKDIR /build
 
