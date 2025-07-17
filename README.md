@@ -3,7 +3,7 @@
 🚀 **Dockerfiles for Language Server Protocol (LSP) servers** - Containerized language servers for use with [lspcontainers.nvim](https://github.com/lspcontainers/lspcontainers.nvim).
 
 [![Docker Hub](https://img.shields.io/badge/Docker%20Hub-lspcontainers-blue?logo=docker)](https://hub.docker.com/u/lspcontainers)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/lspcontainers/dockerfiles/build-image.yml?branch=main)](https://github.com/lspcontainers/dockerfiles/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/lspcontainers/dockerfiles/build-and-push.yml?branch=main)](https://github.com/lspcontainers/dockerfiles/actions)
 [![License](https://img.shields.io/github/license/lspcontainers/dockerfiles)](LICENSE)
 
 ## 🌟 What is this?
