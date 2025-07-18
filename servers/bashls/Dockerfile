@@ -7,6 +7,7 @@ LABEL version="${VERSION}"
 # running shellcheck -V forces it to download its binary during build
 RUN apk add --no-cache \
   nodejs=22.16.0-r2 \
+  shellcheck=0.10.0-r2 \
   yarn=1.22.22-r1 \
   && yarn global add \
     shellcheck@3.1.0 \
