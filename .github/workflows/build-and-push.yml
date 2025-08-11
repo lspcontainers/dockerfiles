@@ -93,7 +93,7 @@ jobs:
 
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # TODO: Replace w/ Github Action - https://github.com/lspcontainers/dockerfiles/runs/2724936969?check_suite_focus=true#step:4:7
       - name: Run hadolint
