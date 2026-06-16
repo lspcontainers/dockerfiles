@@ -1,4 +1,4 @@
-FROM alpine:3.22.1 as build
+FROM alpine:3.24.1 as build
 
 ARG VERSION=1.12.0
 LABEL version="${VERSION}"
@@ -15,7 +15,7 @@ WORKDIR /venv
 RUN /venv/bin/pip install "python-lsp-server[all]==${VERSION}"
 
 
-FROM alpine:3.22.1
+FROM alpine:3.24.1
 
 RUN apk add --no-cache python3=3.12.11-r0 py3-pip=25.1.1-r0
 

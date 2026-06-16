@@ -1,4 +1,4 @@
-FROM alpine:3.22.1
+FROM alpine:3.24.1
 
 ARG VERSION=4.3.4
 LABEL version="${VERSION}"
