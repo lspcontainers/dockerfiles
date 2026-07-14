@@ -1,4 +1,4 @@
-FROM debian:12.11-slim
+FROM debian:13.6-slim
 
 ARG VERSION=1.39.12
 LABEL version="${VERSION}"
