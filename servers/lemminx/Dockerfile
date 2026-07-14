@@ -1,4 +1,4 @@
-FROM debian:12.11-slim
+FROM debian:12.15-slim
 # The binary requires gnu-libc and will not work on alpine
 
 ARG VERSION=0.27.0
