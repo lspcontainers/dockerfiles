@@ -8,7 +8,7 @@ LABEL version="${VERSION}"
 RUN apk add --no-cache --virtual \
   build-deps \
   curl=8.14.1-r1 \
-  gnupg=2.4.7-r0
+  gnupg=2.4.9-r1
 
 WORKDIR /build
 
