@@ -4,7 +4,7 @@ ARG VERSION=1.12.0
 LABEL version="${VERSION}"
 
 RUN apk add --no-cache \
-    build-base=0.5-r3 \
+    build-base=0.5-r4 \
     python3=3.12.11-r0 \
     python3-dev=3.12.11-r0 \
     py3-pip=25.1.1-r0 \

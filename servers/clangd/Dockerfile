@@ -4,7 +4,7 @@ ARG VERSION=20.1.8
 LABEL version="${VERSION}"
 
 RUN apk add --no-cache \
-  build-base=0.5-r3 \
+  build-base=0.5-r4 \
   clang-extra-tools=${VERSION}-r0
 
 CMD [ "clangd", "--background-index" ]
